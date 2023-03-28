@@ -33,4 +33,18 @@ class RecipeTest {
         assertEquals("Ingredients", recipe.getIngredients());
     }
 
+    @Test
+    public void testSetRecipeInstructions() {
+        Recipe recipe = new Recipe();
+        recipe.setInstructions("Instructions");
+        assertEquals("Instructions", recipe.getInstructions());
+    }
+
+    @Test
+    public void testSetRecipeLike() {
+        Recipe recipe = new Recipe();
+        recipe.setUserLikes(1l);
+        assertEquals(1l, recipe.getUserLikes());
+    }
+
 }

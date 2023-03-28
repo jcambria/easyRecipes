@@ -7,7 +7,11 @@ public class Recipe {
     private String name;
     private String description;
     private String ingredients;
+    private String instructions;
+    private long userLikes;
 
+    public Recipe() {
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -39,5 +43,21 @@ public class Recipe {
 
     public String getIngredients() {
         return this.ingredients;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
+    public String getInstructions() {
+        return this.instructions;
+    }
+
+    public void setUserLikes(long userLikes) {
+        this.userLikes = userLikes;
+    }
+
+    public long getUserLikes() {
+        return this.userLikes;
     }
 }
