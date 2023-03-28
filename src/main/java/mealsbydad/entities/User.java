@@ -1,5 +1,9 @@
-package mealsbydad;
+package mealsbydad.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
 
     public String getUserName() {
@@ -17,6 +21,8 @@ public class User {
     public String getPassword() {
         return password;
     }
+    @Id
+    public long id;
 
     String userName;
 
