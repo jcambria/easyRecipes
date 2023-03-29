@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import mealsbydad.Recipe;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 //@Entity
 public class User {
@@ -38,13 +39,23 @@ public class User {
 
     String password;
 
-    public Collection<Recipe> favoriteRecipes;
+    public Collection<Recipe> favoriteRecipes = new HashSet<>();
+
+
+
+    public void addFavoriteRecipe(final Recipe favoriteRecipe) {
+        favoriteRecipes.add(favoriteRecipe);
+    }
+
+
+
 
     public User(String userName, String firstName, String lastName, String password) {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+
 
     }
 
