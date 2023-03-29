@@ -2,7 +2,7 @@ package mealsbydad.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import mealsbydad.Recipe;
+import mealsbydad.entities.Recipe;
 
 import java.util.Collection;
 import java.util.HashSet;

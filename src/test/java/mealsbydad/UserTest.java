@@ -1,5 +1,6 @@
 package mealsbydad;
 
+import mealsbydad.entities.Recipe;
 import mealsbydad.entities.User;
 import org.junit.jupiter.api.Test;
 
