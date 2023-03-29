@@ -46,9 +46,17 @@ class RecipeTest {
     @Test
     public void testSetRecipeLike() {
         Recipe recipe = new Recipe();
-        User user = new User("Darry" , "Darry", "Parks", "FFFFF");
+        User user = new User("Darry", "Darry", "Parks", "FFFFF");
         recipe.setUserLikes(user);
         assertTrue(recipe.getUserLikes().contains(user));
+    }
+
+    @Test
+    public void testUserCreateRecipe() {
+        User user = new User("Darry", "Darry", "Parks", "FFFFF");
+        Recipe recipe = new Recipe(user, "Recipe Name", "Recipe Description", "Recipe Ingredients", "Recipe Instructions");
+        assertEquals(user, recipe.getAuthor());
+
     }
 
 }
