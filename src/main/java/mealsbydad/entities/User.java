@@ -2,6 +2,9 @@ package mealsbydad.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import mealsbydad.Recipe;
+
+import java.util.Collection;
 
 //@Entity
 public class User {
@@ -21,7 +24,10 @@ public class User {
     public String getPassword() {
         return password;
     }
-   // @Id
+
+    public Collection<Recipe> getFavoriteRecipes() { return favoriteRecipes; }
+
+    // @Id
     public long id;
 
     String userName;
@@ -31,6 +37,8 @@ public class User {
     String lastName;
 
     String password;
+
+    public Collection<Recipe> favoriteRecipes;
 
     public User(String userName, String firstName, String lastName, String password) {
         this.userName = userName;
