@@ -3,7 +3,7 @@ package mealsbydad.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity
+//@Entity
 public class User {
 
     public String getUserName() {
@@ -21,7 +21,7 @@ public class User {
     public String getPassword() {
         return password;
     }
-    @Id
+   // @Id
     public long id;
 
     String userName;
