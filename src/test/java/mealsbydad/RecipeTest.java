@@ -1,8 +1,11 @@
 package mealsbydad;
 
+import mealsbydad.entities.Recipe;
+import mealsbydad.entities.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RecipeTest {
     @Test
@@ -43,8 +46,9 @@ class RecipeTest {
     @Test
     public void testSetRecipeLike() {
         Recipe recipe = new Recipe();
-        recipe.setUserLikes(1l);
-        assertEquals(1l, recipe.getUserLikes());
+        User user = new User("Darry" , "Darry", "Parks", "FFFFF");
+        recipe.setUserLikes(user);
+        assertTrue(recipe.getUserLikes().contains(user));
     }
 
 }

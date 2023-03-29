@@ -1,4 +1,7 @@
-package mealsbydad;
+package mealsbydad.entities;
+
+import java.util.Collection;
+import java.util.HashSet;
 
 public class Recipe {
 
@@ -8,7 +11,7 @@ public class Recipe {
     private String description;
     private String ingredients;
     private String instructions;
-    private long userLikes;
+    private Collection<User> userLikes = new HashSet<>();
 
     public Recipe() {
     }
@@ -53,11 +56,11 @@ public class Recipe {
         return this.instructions;
     }
 
-    public void setUserLikes(long userLikes) {
-        this.userLikes = userLikes;
+    public void setUserLikes(User user) {
+        userLikes.add(user);
     }
 
-    public long getUserLikes() {
+    public Collection<User> getUserLikes() {
         return this.userLikes;
     }
 }
