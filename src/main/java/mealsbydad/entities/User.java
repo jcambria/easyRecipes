@@ -47,6 +47,10 @@ public class User {
         favoriteRecipes.add(favoriteRecipe);
     }
 
+    public void removeFavoriteRecipe(final Recipe favoriteRecipe) {
+        favoriteRecipes.remove(favoriteRecipe);
+    }
+
 
 
 
