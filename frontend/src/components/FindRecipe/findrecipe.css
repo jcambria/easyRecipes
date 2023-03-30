@@ -12,9 +12,6 @@ body{
 form{
     text-align: center;
     box-shadow:  1px 18px 22px #bf9b30;
-               
-    
-
     
 }
 
@@ -30,6 +27,8 @@ h2{
   padding: 1%;
     color: white;
 }
+
+
 
 input[type="text"] {
     border: none;

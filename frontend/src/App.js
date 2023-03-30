@@ -6,6 +6,8 @@ import RecipeSearchBar from './components/FindRecipe/RecipeSearchBar';
 import RecipeCard from './components/RecipeCard/RecipeCard';
 
 
+
+
 function App() {
   return (
     <div>
@@ -13,8 +15,8 @@ function App() {
       <Header />
       <RecipeSearchBar />
       <RecipeCard  />
-
-
+      
+  
       {/* <Recipe /> */}
     </div>
   );

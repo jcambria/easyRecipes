@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { AiOutlineHeart } from "react-icons/ai";
 import './findrecipe.css';
-
+import Axios from 'axios';
 
 
 function RecipeSearchBar() {
   const [query, setQuery] = useState('');
+  const [joke, setJoke] = useState("")
+
   
   const [recipes, setRecipes] = useState([
     {
@@ -45,11 +47,25 @@ function RecipeSearchBar() {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const [count, setCount] = useState(0);
+
+  const getJoke = () => {
+
+
+
+    Axios.get("https://official-joke-api.appspot.com/random_joke").then((response) => {
+      console.log(response)
+      setJoke(response.data.setup + " . . . " + response.data.punchline)
+    })
+  }
+
+
+
+
+
     
   function handleCount(){
     setCount(count + 1);
   }
-   
 
 
 
@@ -68,7 +84,6 @@ function RecipeSearchBar() {
     );
 
     if (matchingRecipes.length > 0) {
-      <h1>Sorry</h1>  
       setSelectedRecipe(matchingRecipes[0]);
     } else {
       setSelectedRecipe(null);
@@ -79,16 +94,19 @@ function RecipeSearchBar() {
     <div className="Sub">
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} />
-        <button id='recipes' type="submit">GO</button>
+        <button onClick={getJoke} id='recipes' type="submit">GO</button>
       </form>
       {selectedRecipe && (
+        <grid>
         <div>
-          <h2>{selectedRecipe.name}</h2>
+          <h2>{selectedRecipe.name} {joke}</h2>
           <p>Ingredients: {selectedRecipe.ingredients.join(', ')}</p>
           <p>Directions: {selectedRecipe.directions}</p>
           <img id='foodimg' src={selectedRecipe.img} alt="" />
           <p id='like'> Likes: {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
         </div>
+          
+        </grid>
       )}
 
     </div>
