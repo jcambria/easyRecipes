@@ -39,3 +39,5 @@ out/
 gradle/
 node_modules/
 src/main/resources/static/dist/
+
+**/.DS_Store

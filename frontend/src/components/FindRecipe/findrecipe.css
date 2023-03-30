@@ -1,0 +1,70 @@
+
+body{
+    background-color: var(--color-black);
+
+}
+
+.Sub{
+    text-align: center;
+}
+
+
+form{
+    text-align: center;
+    box-shadow:  1px 18px 22px #bf9b30;
+               
+    
+
+    
+}
+
+
+
+#bar{
+
+    display: flex;
+    align-items: center;
+}
+
+h2{
+  padding: 1%;
+    color: white;
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 8px 12px 25px rgba(0, 0, 0, 0.1);
+    flex: 1;
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+    box-shadow: 8px 10px 12px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+  button {
+    background-color: var(--color-black);;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #bf9b30;
+  }
+
+  #foodimg{
+    width: 330px;
+    height: 300px;
+  }
+  
