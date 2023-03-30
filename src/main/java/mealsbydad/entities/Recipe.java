@@ -8,7 +8,8 @@ import java.util.HashSet;
 @Entity
 public class Recipe {
 
-    @Id @GeneratedValue()
+    @Id
+    @GeneratedValue()
     private int id;
     private String name;
     @Lob
