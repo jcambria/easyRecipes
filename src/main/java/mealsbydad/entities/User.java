@@ -1,9 +1,6 @@
 package mealsbydad.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -32,6 +29,7 @@ public class User {
     }
 
     @Id
+    @GeneratedValue()
     public long id;
 
     String userName;
