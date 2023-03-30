@@ -1,25 +1,35 @@
 package mealsbydad.entities;
 
+import jakarta.persistence.*;
+
 import java.util.Collection;
 import java.util.HashSet;
 
+@Entity
 public class Recipe {
 
-
+    @Id
+    @GeneratedValue()
     private int id;
     private String name;
+    @Lob
     private String description;
+    @Lob
     private String ingredients;
+    @Lob
     private String instructions;
+    @ManyToMany
+    @JoinTable
     private Collection<User> userLikes = new HashSet<>();
+    @ManyToOne
     private User author;
 
 
     public Recipe() {
     }
 
-    public Recipe(User user, String name, String description, String ingredients, String instructions) {
-        this.author = user;
+    public Recipe(User author, String name, String description, String ingredients, String instructions) {
+        this.author = author;
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;

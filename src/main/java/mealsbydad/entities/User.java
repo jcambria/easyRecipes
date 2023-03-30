@@ -1,13 +1,11 @@
 package mealsbydad.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import mealsbydad.entities.Recipe;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 import java.util.HashSet;
 
-//@Entity
+@Entity(name = "MyUsers")
 public class User {
 
     public String getUserName() {
@@ -26,9 +24,12 @@ public class User {
         return password;
     }
 
-    public Collection<Recipe> getFavoriteRecipes() { return favoriteRecipes; }
+    public Collection<Recipe> getFavoriteRecipes() {
+        return favoriteRecipes;
+    }
 
-    // @Id
+    @Id
+    @GeneratedValue()
     public long id;
 
     String userName;
@@ -38,9 +39,11 @@ public class User {
     String lastName;
 
     String password;
-
+    @ManyToMany
     public Collection<Recipe> favoriteRecipes = new HashSet<>();
 
+    @OneToMany(mappedBy = "author")
+    private Collection<Recipe> authoredRecipes = new HashSet<>();
 
 
     public void addFavoriteRecipe(final Recipe favoriteRecipe) {
@@ -50,8 +53,6 @@ public class User {
     public void removeFavoriteRecipe(final Recipe favoriteRecipe) {
         favoriteRecipes.remove(favoriteRecipe);
     }
-
-
 
 
     public User(String userName, String firstName, String lastName, String password) {
