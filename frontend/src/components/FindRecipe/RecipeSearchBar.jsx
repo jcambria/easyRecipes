@@ -7,6 +7,7 @@ import Axios from 'axios';
 function RecipeSearchBar() {
   const [query, setQuery] = useState('');
   const [joke, setJoke] = useState("")
+  const [meal, setMeal] = useState([""])
 
   
   const [recipes, setRecipes] = useState([
@@ -50,19 +51,24 @@ function RecipeSearchBar() {
 
   const getJoke = () => {
 
-
-
     Axios.get("https://official-joke-api.appspot.com/random_joke").then((response) => {
-      console.log(response)
       setJoke(response.data.setup + " . . . " + response.data.punchline)
     })
+  }
+
+  const getMeal = () => {
+
+    Axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood").then((response) => {
+      setMeal(response.data.meals.strMeal)
+      console.log(response)
+
+    })
+
   }
 
 
 
 
-
-    
   function handleCount(){
     setCount(count + 1);
   }
@@ -94,12 +100,12 @@ function RecipeSearchBar() {
     <div className="Sub">
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} />
-        <button onClick={getJoke} id='recipes' type="submit">GO</button>
+        <button onClick={ () => getMeal() } id='recipes' type="submit">GO</button>
       </form>
       {selectedRecipe && (
         <grid>
         <div>
-          <h2>{selectedRecipe.name} {joke}</h2>
+          <h2>{selectedRecipe.name} {meal}</h2>
           <p>Ingredients: {selectedRecipe.ingredients.join(', ')}</p>
           <p>Directions: {selectedRecipe.directions}</p>
           <img id='foodimg' src={selectedRecipe.img} alt="" />
