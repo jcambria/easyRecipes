@@ -1,5 +1,6 @@
 package mealsbydad.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Collection;
@@ -18,10 +19,11 @@ public class Recipe {
     private String ingredients;
     @Lob
     private String instructions;
+    @JsonIgnore
     @ManyToMany
     @JoinTable
     private Collection<User> userLikes = new HashSet<>();
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User author;
 
 
