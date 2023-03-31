@@ -4,17 +4,64 @@ body{
 
 }
 
+
+h1{
+  color: white;
+  padding-bottom: 20px;
+}
+
 .Sub{
     text-align: center;
 }
 
 
 form{
-    text-align: center;
-    box-shadow:  1px 18px 22px #bf9b30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+
+    /* text-align: center; */
+    box-shadow:  0px 12px 10px #bf9b30;
     
 }
 
+
+
+
+.mealCat{
+  font-size: 28px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* text-decoration: dotted; */
+  
+}
+
+#foodInfoCat{
+  font-size: 30px;
+  /* text-decoration: underline; */
+
+}
+
+#instructions{
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  
+}
+
+#foodinfoIns{
+  font-size: 30px;
+
+}
+
+#foodinfoIng{
+  font-size: 30px;
+  
+}
 
 
 #bar{
@@ -47,19 +94,26 @@ input[type="text"] {
 
 
   button {
-    background-color: var(--color-black);;
+    background-color: var(--color-black);
+    margin-bottom: 10px;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid;
+    border-radius: 20px;
     padding: 10px 20px;
     margin-left: 10px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-color: white;
+    transition: background-color 0.6s ease;
+  
   }
   
   button:hover {
     background-color: #bf9b30;
+    border: none;
+    /* border-radius: 100%;
+    color: black; */
+    border-color: #ff9900;
   }
 
   #foodimg{

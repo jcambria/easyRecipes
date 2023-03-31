@@ -2,12 +2,19 @@ import React, { useState } from 'react';
 import { AiOutlineHeart } from "react-icons/ai";
 import './findrecipe.css';
 import Axios from 'axios';
+import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 function RecipeSearchBar() {
   const [query, setQuery] = useState('');
   const [joke, setJoke] = useState("")
-  const [meal, setMeal] = useState([""])
+  const [mealInfo, setMealInfo] = useState("")
+  const [mealImg, setMealImg] = useState("")
+  const [mealCategory, setMealCategory] = useState("")
+  const [howToVideo, setHowtoVideo] = useState("")
+  const [instructions, setInstructions] = useState("")
+  const [foodOrigin, setFoodOrigin] = useState("")
+ 
 
   
   const [recipes, setRecipes] = useState([
@@ -56,15 +63,24 @@ function RecipeSearchBar() {
     })
   }
 
-  const getMeal = () => {
 
-    Axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood").then((response) => {
-      setMeal(response.data.meals.strMeal)
-      console.log(response)
+
+  const getMealInfo = () => {
+    Axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((response) => {
+      // const randomFood = Math.random() * 28 | 0;
+
+      setMealInfo(response.data.meals[0].strMeal);
+      setMealImg(response.data.meals[0].strMealThumb)
+      setMealCategory(response.data.meals[0].strCategory)
+      setHowtoVideo(response.data.meals[0].strYoutube)
+      setInstructions(response.data.meals[0].strInstructions)
+      setFoodOrigin(response.data.meals[0].strArea)
+
 
     })
-
   }
+
+
 
 
 
@@ -75,10 +91,10 @@ function RecipeSearchBar() {
 
 
 
-  const handleChange = (event) => {
-    setQuery(event.target.value);
-    setSelectedRecipe(null); // Reset the selected recipe when the query changes
-  };
+  // const handleChange = (event) => {
+  //   setQuery(event.target.value);
+  //   setSelectedRecipe(null); // Reset the selected recipe when the query changes
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -89,7 +105,7 @@ function RecipeSearchBar() {
       )
     );
 
-    if (matchingRecipes.length > 0) {
+    if (matchingRecipes) {
       setSelectedRecipe(matchingRecipes[0]);
     } else {
       setSelectedRecipe(null);
@@ -99,19 +115,28 @@ function RecipeSearchBar() {
   return (
     <div className="Sub">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} />
-        <button onClick={ () => getMeal() } id='recipes' type="submit">GO</button>
+        {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
+        <button onClick={() => getMealInfo()} id='recipes'  type="submit">Get A Recipe</button>
       </form>
       {selectedRecipe && (
         <grid>
         <div>
-          <h2>{selectedRecipe.name} {meal}</h2>
-          <p>Ingredients: {selectedRecipe.ingredients.join(', ')}</p>
-          <p>Directions: {selectedRecipe.directions}</p>
-          <img id='foodimg' src={selectedRecipe.img} alt="" />
+          <h1>{mealInfo}</h1>
+          <p id='foodInfoCat'>Category: {mealCategory}
+          
+            <p> Origin: {foodOrigin}
+              
+            </p>
+           
+            </p>
+          <img id='foodimg' src={mealImg} alt="" />
+
+          <p id='foodinfoIng'>Ingredients:  </p>
+          <p id='foodinfoIns'>Instructions: <p id='instructions'>{instructions}</p> </p>
+          <p id='foodinfo'> How to: <a href="">{howToVideo}</a></p>
           <p id='like'> Likes: {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
         </div>
-          
+        <RecipeCard />
         </grid>
       )}
 
@@ -120,5 +145,6 @@ function RecipeSearchBar() {
   );
   
 }
+
 
 export default RecipeSearchBar;

@@ -14,6 +14,8 @@ const Navbar = () => {
     <nav className="app_navbar">
         <div className='app__navbar-logo'>
         <img src="https://images.cooltext.com/5650975.png" alt="logo" />
+        
+        
         </div>
         <ul className='app__navbar-links'>
             <li className='p__opensans'><a href="#home">Home</a></li>
@@ -22,7 +24,7 @@ const Navbar = () => {
             <li className='p__opensans'><a href="#contact">Contact</a></li>
         </ul>
         <div className='app__navbar-login'>
-            <a href="#login" className='p_opensans'> Log in / Sign up</a>
+            <a href="#login" className='p_opensans'> Login</a>
             <div />
             <a href="/" className='p_opensans'>Your Recipes</a>
         </div>
