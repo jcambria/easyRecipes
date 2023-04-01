@@ -8,6 +8,10 @@ import java.util.HashSet;
 @Entity(name = "MyUsers")
 public class User {
 
+    public User() {
+
+    }
+
     public String getUserName() {
         return userName;
     }
