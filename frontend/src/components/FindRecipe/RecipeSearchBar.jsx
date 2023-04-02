@@ -114,30 +114,31 @@ function RecipeSearchBar() {
 
   return (
     <div className="Sub">
-      <form onSubmit={handleSubmit}>
+      <form id='recipes' onSubmit={handleSubmit}>
         {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
-        <button onClick={() => getMealInfo()} id='recipes'  type="submit">Get A Recipe</button>
+        <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">View A Random Recipe</button>
       </form>
       {selectedRecipe && (
-        <grid>
-        <div>
-          <h1>{mealInfo}</h1>
-          <p id='foodInfoCat'>Category: {mealCategory}
-          
-            <p> Origin: {foodOrigin}
-              
-            </p>
-           
-            </p>
-          <img id='foodimg' src={mealImg} alt="" />
-
-          <p id='foodinfoIng'>Ingredients:  </p>
-          <p id='foodinfoIns'>Instructions: <p id='instructions'>{instructions}</p> </p>
-          <p id='foodinfo'> How to: <a href="">{howToVideo}</a></p>
-          <p id='like'> Likes: {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
+       <div>
+           <button onClick={() => getMealInfo()}  type="submit">Next</button>
+        <div className='card'>
+        <img id='foodimg' src={mealImg} alt="" />
+        <div className='container'>
+        <h1>{mealInfo}</h1>
+        <p id='foodInfoCat'>Category: {mealCategory}</p>
+        <p id='origin'> Origin: {foodOrigin}</p>
+        <p>Instructions: {instructions}</p>  
+        <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
+        
+  
         </div>
-        <RecipeCard />
-        </grid>
+        {/* <AiOutlineHeart id='newLike' onClick={handleCount}  /> */}
+        
+          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
+        </div>
+        {/* <RecipeCard /> */}
+        </div>
+        
       )}
 
     </div>

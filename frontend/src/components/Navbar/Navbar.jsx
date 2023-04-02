@@ -5,6 +5,7 @@ import './navbar.css';
 import './logo.png';
 
 
+
 const Navbar = () => {
 
     const[toggleMenu, setToggleMenu] = useState(false);
@@ -13,7 +14,9 @@ const Navbar = () => {
   return (
     <nav className="app_navbar">
         <div className='app__navbar-logo'>
-        <img src="https://images.cooltext.com/5650975.png" alt="logo" />
+          {/* <img src={require('./MBD.png')} alt="" /> */}
+          <img src="https://images.cooltext.com/5651464.png" alt="" />
+        {/* <img src="https://images.cooltext.com/5650975.png" alt="logo" /> */}
         
         
         </div>
@@ -36,7 +39,7 @@ const Navbar = () => {
             <MdOutlineRestaurantMenu className='overlay__close'  fontSize={27} onClick={() => setToggleMenu(false)} />
             <ul className='app__nav-smallscreen_links'>
                 <li className='p__opensans'><a href="#home">Home</a></li>
-                <li className='p__opensans'><a href="#recipe">Find Recipe</a></li>
+                <li className='p__opensans'><a href="#recipes">Find Recipe</a></li>
                 <li className='p__opensans'><a href="#resources">Resources</a></li>
                 <li className='p__opensans'><a href="#contact">Contact</a></li>
         </ul>   
