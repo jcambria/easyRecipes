@@ -4,6 +4,7 @@ import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import './navbar.css';
 import './logo.png';
 import LoginForm from './LoginForm';
+import SignInButton from './SignInButton';
 
 
 
@@ -35,26 +36,17 @@ const Navbar = () => {
         </ul>
         <div className='app__navbar-login'>
 
-          <button onClick={() => { 
-          handleLoginClick();
-          console.log(isShowLogin)
-          return(
-            <div>
-              <p>
-                jellkopcsaio
-              </p>
-               <LoginForm  />
-            </div>
-           
+        <div className="navbar">
           
-          )
-          
-          }}>Login</button>
+      <SignInButton handleLoginClick={handleLoginClick} />
+      <LoginForm isShowLogin={isShowLogin} />
+    </div>
 
-            {/* <a href="#login"  className='p_opensans'> Login</a> */}
+
             {/* <SignInButton handleLoginClick={handleLoginClick} /> */}
             {/* <LoginForm isShowLogin={isShowLogin} /> */}
             <div/>
+            <a href="#login"  className='p_opensans'> Login</a>
             <a href="/" className='p_opensans'>Your Recipes</a>
         </div>
         <div className='app__navbar-smallscreen'>

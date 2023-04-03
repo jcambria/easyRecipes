@@ -7,7 +7,8 @@ function SignInButton({ handleLoginClick }) {
   return (
     <div className="navbar">
       <div>
-        <button onClick={handleClick} className="loginicon">button</button> 
+        {/* <a href="" onClick={handleClick} className="p_opensans" >login</a> */}
+        {/* <button onClick={handleClick} className="loginicon">button</button>  */}
       </div>
     </div>
   );
