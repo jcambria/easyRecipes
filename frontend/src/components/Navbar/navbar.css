@@ -6,17 +6,17 @@
     align-items: center;
     background: var(--color-black);
     padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow-y: scroll;
+
 }
 
-
-.app__navbar-logo{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: white;
-}
 .app__navbar-logo img{
-    width: 130px;
+   float: left;
+    width: 120px;
 }
 
 .app__navbar-links{
@@ -52,14 +52,10 @@
 
 
 .app__navbar-login div{
-    width: 2px;
-    height: 30px;
+   
+    width: .5px;
+    height: 25px;
     background-color: #545454;
-}
-
-.app__navbar-smallscreen{
-    /* display: none; */
-
 }
 
 .app__navbar-smallscreen_overlay{
@@ -107,9 +103,6 @@
     
 }
 
-
-
-
 @media screen and (max-width: 1150px) {
     .app__navbar-links{
         display: none;
@@ -118,6 +111,136 @@
         display: flex;
     }
 }
+
+
+
+
+
+.loginicon {
+    /* position: absolute; */
+    /* width: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: bolder;
+    color: white;
+    height: 20px;
+    font-size: 10px;
+    left: 85%;
+    top: 10px;
+    border-radius: 24px;
+    cursor: pointer; */
+
+    display: flex;
+     align-items: center;
+    justify-content: flex-end;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: 0.5s ease;
+
+  }
+
+  
+  .loginicon:hover{
+    border-bottom: 1px  solid #bf9b30;
+  }
+
+
+
+  .login-form{
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    
+  }
+
+  .form-box{
+    position: absolute;
+    margin-top: 100vh;
+    background: black;
+    padding-right: 80px;
+    padding-left: 80px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+    /* z-index: 1; */
+  }
+
+  .login-text{
+    width: 100%;
+    color: white;
+    border-bottom: 2px solid white;
+    line-height: 30px;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+  }
+
+  label {
+    color:white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .login-box{
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 2px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 5px;
+    font-size: 30px;
+    background: transparent;
+    transition: 1s;
+    outline: none;
+  }
+
+  .login-btn{
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    background:#bf9b30;
+    color: white;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15pt;
+    font-weight: 700;
+    transition: 1s;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .login-btn:hover{
+    transform: scale(1.03);
+    letter-spacing: 4px;
+    background-color: #7FFFD4;
+    color: #1E90FF;
+  }
+
+  .show {
+    display: block;
+    transition: 800ms;
+    opacity: 1;
+  }
+
+  .show.active {
+    transform: translateY(100px) scale(0) rotateY(180deg);
+    opacity: 0;
+  }
+
 
 
     

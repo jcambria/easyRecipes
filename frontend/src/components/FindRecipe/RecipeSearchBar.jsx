@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillAlert, AiFillAlipayCircle, AiFillBook, AiFillPauseCircle, AiOutlineExport, AiOutlineHeart, AiOutlinePlayCircle } from "react-icons/ai";
 import './findrecipe.css';
-
+import Axios from 'axios';
+import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 function RecipeSearchBar() {
   const [query, setQuery] = useState('');
+  const [joke, setJoke] = useState("")
+  const [mealInfo, setMealInfo] = useState("")
+  const [mealImg, setMealImg] = useState("")
+  const [mealCategory, setMealCategory] = useState("")
+  const [howToVideo, setHowtoVideo] = useState("")
+  const [instructions, setInstructions] = useState("")
+  const [foodOrigin, setFoodOrigin] = useState("")
+ 
+
   
   const [recipes, setRecipes] = useState([
     {
@@ -45,18 +55,46 @@ function RecipeSearchBar() {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const [count, setCount] = useState(0);
-    
+
+  const getJoke = () => {
+
+    Axios.get("https://official-joke-api.appspot.com/random_joke").then((response) => {
+      setJoke(response.data.setup + " . . . " + response.data.punchline)
+    })
+  }
+
+
+
+  const getMealInfo = () => {
+    Axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then((response) => {
+      // const randomFood = Math.random() * 28 | 0;
+
+      setMealInfo(response.data.meals[0].strMeal);
+      setMealImg(response.data.meals[0].strMealThumb)
+      setMealCategory(response.data.meals[0].strCategory)
+      setHowtoVideo(response.data.meals[0].strYoutube)
+      setInstructions(response.data.meals[0].strInstructions)
+      setFoodOrigin(response.data.meals[0].strArea)
+
+
+    })
+  }
+
+
+
+
+
+
   function handleCount(){
     setCount(count + 1);
   }
-   
 
 
 
-  const handleChange = (event) => {
-    setQuery(event.target.value);
-    setSelectedRecipe(null); // Reset the selected recipe when the query changes
-  };
+  // const handleChange = (event) => {
+  //   setQuery(event.target.value);
+  //   setSelectedRecipe(null); // Reset the selected recipe when the query changes
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -67,8 +105,7 @@ function RecipeSearchBar() {
       )
     );
 
-    if (matchingRecipes.length > 0) {
-      <h1>Sorry</h1>  
+    if (matchingRecipes) {
       setSelectedRecipe(matchingRecipes[0]);
     } else {
       setSelectedRecipe(null);
@@ -77,18 +114,32 @@ function RecipeSearchBar() {
 
   return (
     <div className="Sub">
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} />
-        <button id='recipes' type="submit">GO</button>
+      <form id='recipes' onSubmit={handleSubmit}>
+        {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
+        <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
       </form>
       {selectedRecipe && (
-        <div>
-          <h2>{selectedRecipe.name}</h2>
-          <p>Ingredients: {selectedRecipe.ingredients.join(', ')}</p>
-          <p>Directions: {selectedRecipe.directions}</p>
-          <img id='foodimg' src={selectedRecipe.img} alt="" />
-          <p id='like'> Likes: {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
+       <div>
+          {/* <AiFillBook id='play' onClick={() => getMealInfo()} /> */}
+           <button onClick={() => getMealInfo()}  type="submit">Next</button>
+        <div className='card'>
+        <img id='foodimg' src={mealImg} alt="" />
+        <div className='container'>
+        <h1>{mealInfo}</h1>
+        <p id='foodInfoCat'>Category: {mealCategory}</p>
+        <p id='origin'> Origin: {foodOrigin}</p>
+        {/* <p>Instructions: {instructions}</p>   */}
+        <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
+        
+  
         </div>
+        {/* <AiOutlineHeart id='newLike' onClick={handleCount}  /> */}
+        
+          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
+        </div>
+        {/* <RecipeCard /> */}
+        </div>
+        
       )}
 
     </div>
@@ -96,5 +147,6 @@ function RecipeSearchBar() {
   );
   
 }
+
 
 export default RecipeSearchBar;

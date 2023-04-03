@@ -3,68 +3,161 @@ body{
     background-color: var(--color-black);
 
 }
+#list{
+  color: white;
+}
+
+
+h1{
+  color: white;
+  padding-bottom: 20px;
+}
+
+#recipesButton{
+  font-size: 33px;
+  border: none;
+  color: #aaa;
+  
+}
+
+#recipesButton:hover{
+  text-decoration: underline 2px  goldenrod ;
+  
+}
+
+/* #play{
+  font-size: 30px;
+  color: white;
+} */
+
+
+
+#like{
+  font-size: 28px;
+}
 
 .Sub{
     text-align: center;
 }
 
-
 form{
-    text-align: center;
-    box-shadow:  1px 18px 22px #bf9b30;
-               
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
+
+    /* text-align: center; */
+    box-shadow:  0px 10px 10px #bf9b30;
     
+}
+
+#heartbutton{
+  font-size: 30px;
+  padding: .5px .5px;
+  border: none;
+}
+
+#heartbutton:hover{
+color: gray;
+ 
+}
+
+
+.mealCat{
+  font-size: 28px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* text-decoration: dotted; */
+  
+}
+
+#foodInfoCat{
+  font-size: 20px;
+  margin-top: 10px;
+  
+  /* text-decoration: underline; */
+
+}
+
+#instructions{
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 10px;
+  
+  
+}
+
+
+#origin{
+  margin-top: -30px;
+  font-size: 20px;
+
+}
+
+#foodinfo{
+  margin-top: -40px;
 }
 
 
 
-#bar{
+#foodinfoIns{
+  font-size: 30px;
+  margin-top: -30px;
 
-    display: flex;
-    align-items: center;
+
 }
+
+#foodinfoIng{
+  font-size: 30px;
+  margin-top: -30px;
+  
+}
+
 
 h2{
   padding: 1%;
     color: white;
 }
 
-input[type="text"] {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    box-shadow: 8px 12px 25px rgba(0, 0, 0, 0.1);
-    flex: 1;
-  }
-
-  input[type="text"]:focus {
-    outline: none;
-    box-shadow: 8px 10px 12px rgba(0, 0, 0, 0.2);
-  }
-
-
-
-  button {
-    background-color: var(--color-black);;
+button {
+    background-color: var(--color-black);
+    margin-bottom: 10px;
     color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    /* border: 1px solid; */
+    border-radius: 20px;
+    padding: 10px 10px;
     margin-left: 10px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.6s ease;
+  
   }
   
   button:hover {
-    background-color: #bf9b30;
+    /* background-color: #bf9b30; */
   }
 
   #foodimg{
-    width: 330px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
   }
   

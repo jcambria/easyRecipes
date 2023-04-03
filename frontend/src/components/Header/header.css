@@ -3,81 +3,96 @@ body{
 }
 
 
+
+
+#headerForRecipe{
+    font-size: 40px;
+    color: #aaa;
+    text-align: center;
+    margin-top: 20%;
+    font-family: cursive;
+
+}
+
+
+
 .app__header{
     background: var(--color-black);
     
 }
 .app__header-h1{
+    text-align: left;
+    font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: #aaa;
 }
 
 .spoon{
     color: #bf9b30;
 }
 
+/* #header__intro{
+    letter-spacing: 0.06rem;
+    
+    
+} */
 
 
 #slogon{
     font-family: 'Times New Roman', Times, serif;
     color: #bf9b30;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.4rem;
     text-transform: uppercase;
-    line-height: 70px;
-    font-size: 30px;
+    line-height: 100px;
+    font-size: 26px;
+    text-align: left;
+    margin: 11.5rem 0;
 
 }
 
-
-#steak{
-    position: absolute; 
-    top: 150px;
-    right: 10%; 
-    width: 250px; 
-    min-width: 150px;
-    max-width: 250px;
-    height: 200px;
-    max-height: 200px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    display: flex; 
-    max-width: 100%; 
-
-
+.icon{
+    text-align: left;
 }
 
-@media screen and (max-width: 1150px) {
-    #steak{
-        display: flex;
-        height: 80px;
-        width: 1%; 
-        margin: 70px 0; 
-        right: 5px;
-        top: 10px;
-      }
 
-}
+
    
 p{
-    color: white;
-    margin: 2rem 0;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #aaa;
+    margin: 6rem 0;
+    letter-spacing: 0.06rem;
+    margin-top: -40px;
 }
 
-
-#explorebutton{
-
+.explorebutton{
+  margin-top: -350px;
   background-color: #3c3c3c;
   color: #ffffff;
+  align-items: lef  ;
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  
     
 }
 
-#explorebutton:hover{
+.explorebutton:hover{
   background-color: #bf9b30;
   color: #ffffff;
 }
 
+.animation{
+    width: 320px;
+    float: right;
+    padding-left: auto;
+    padding-right: auto;
+    margin-right: auto;
+    margin-left: auto;
+
+    /* display: flex; */
+}
