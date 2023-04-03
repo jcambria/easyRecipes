@@ -52,14 +52,10 @@
 
 
 .app__navbar-login div{
-    width: 2px;
-    height: 30px;
+   
+    width: .5px;
+    height: 25px;
     background-color: #545454;
-}
-
-.app__navbar-smallscreen{
-    /* display: none; */
-
 }
 
 .app__navbar-smallscreen_overlay{

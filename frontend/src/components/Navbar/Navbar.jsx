@@ -15,13 +15,12 @@ const Navbar = () => {
 
     const handleLoginClick = () => {
     setIsShowLogin((isShowLogin) => !isShowLogin);
-    console.log(isShowLogin)
+    
   };
 
   return (
     <div>
 
-    
     <nav className="app_navbar">
         <div className='app__navbar-logo'>
           {/* <img src={require('./MBD.png')} alt="" /> */}
@@ -38,16 +37,13 @@ const Navbar = () => {
         </ul>
         <div className='app__navbar-login'>
 
-        <div className="navbar">
+        <div className="navbar"></div> 
         
-    </div>
-            {/* <SignInButton handleLoginClick={handleLoginClick} /> */}
-            {/* <LoginForm isShowLogin={isShowLogin} /> */}
-            <div/>
-            {/* <span onClick={() => <SignInButton handleLoginClick={handleLoginClick} /> } > Login</span> */}
-            {/* <a onClick={() => <SignInButton handleLoginClick={handleLoginClick} /> }  className='p_opensans'>Login</a> */}
+        <div/>
             <SignInButton handleLoginClick={handleLoginClick} />
+
             <a href="/" className='p_opensans'>Your Recipes</a>
+
         </div>
         <div className='app__navbar-smallscreen'>
             <GiHamburgerMenu color='#fff' fontSize={27} onClick={() => setToggleMenu(true)} />
