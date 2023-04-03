@@ -5,6 +5,8 @@ import mealsbydad.respositories.RecipeRepository;
 import mealsbydad.respositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin
 public class RecipeController {
@@ -25,5 +27,10 @@ public class RecipeController {
     @PostMapping("/api/recipe")
     public Recipe postRecipe(final @RequestBody Recipe recipe) {
         return recipeRepository.save(recipe);
+    }
+
+    @GetMapping("api/recipes/{recipe_id}")
+    public Optional<Recipe> getRecipe(@PathVariable final long recipe_id) {
+        return recipeRepository.findById(recipe_id);
     }
 }

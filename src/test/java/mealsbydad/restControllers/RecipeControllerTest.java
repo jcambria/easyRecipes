@@ -52,4 +52,20 @@ class RecipeControllerTest {
                 .andExpect(status().isOk());
 
     }
+
+    @Test
+    public void testRecipeById() throws Exception {
+        User user = new User("userName", "firstName", "lastName", "password");
+        Recipe recipe = new Recipe(user, "Recipe Name", "Recipe Description", "Recipe Ingredients", "Recipe Instructions");
+        recipe.setId(1);
+
+        mvc.perform(MockMvcRequestBuilders.post("/api/recipe")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getJsonContent(recipe)))
+                .andExpect(status().isOk());
+        mvc.perform(MockMvcRequestBuilders.get("/api/recipes/1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+    }
 }
