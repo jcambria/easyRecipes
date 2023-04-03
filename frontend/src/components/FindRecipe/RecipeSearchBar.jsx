@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillAlert, AiFillAlipayCircle, AiFillBook, AiFillPauseCircle, AiOutlineExport, AiOutlineHeart, AiOutlinePlayCircle } from "react-icons/ai";
 import './findrecipe.css';
 import Axios from 'axios';
 import RecipeCard from '../RecipeCard/RecipeCard';
@@ -120,6 +120,7 @@ function RecipeSearchBar() {
       </form>
       {selectedRecipe && (
        <div>
+          {/* <AiFillBook id='play' onClick={() => getMealInfo()} /> */}
            <button onClick={() => getMealInfo()}  type="submit">Next</button>
         <div className='card'>
         <img id='foodimg' src={mealImg} alt="" />
@@ -127,7 +128,7 @@ function RecipeSearchBar() {
         <h1>{mealInfo}</h1>
         <p id='foodInfoCat'>Category: {mealCategory}</p>
         <p id='origin'> Origin: {foodOrigin}</p>
-        <p>Instructions: {instructions}</p>  
+        {/* <p>Instructions: {instructions}</p>   */}
         <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
         
   

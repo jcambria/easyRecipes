@@ -11,6 +11,10 @@ import ContactPage from './components/ContactPage/ContactPage';
 
 
 
+import Card from './components/Resources/Card';
+
+
+
 function App() {
   return (
     <div>
@@ -18,6 +22,7 @@ function App() {
       <Header />
       <RecipeSearchBar />
       <RecipeCard  />
+
       <ImageGallery images= {['https://a.cdn-hotels.com/gdcs/production0/d1513/35c1c89e-408c-4449-9abe-f109068f40c0.jpg?impolicy=fcrop&w=800&h=533&q=medium',
       'https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000',
       'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=pexels-ash-376464.jpg&fm=jpg',
@@ -25,9 +30,9 @@ function App() {
 
       <ContactPage />
 
-    
-      
-      
+      <Card />
+  
+ 
       {/* <Recipe /> */}
     </div>
   );

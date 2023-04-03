@@ -1,14 +1,37 @@
 package mealsbydad.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import mealsbydad.entities.Recipe;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 import java.util.HashSet;
 
-//@Entity
+@Entity(name = "MyUsers")
 public class User {
+
+    @Id
+    @GeneratedValue()
+    public long id;
+    @ManyToMany
+    public Collection<Recipe> favoriteRecipes = new HashSet<>();
+    String userName;
+    String firstName;
+    String lastName;
+    String password;
+    @OneToMany(mappedBy = "author")
+    private Collection<Recipe> authoredRecipes = new HashSet<>();
+
+    public User() {
+
+    }
+
+    public User(String userName, String firstName, String lastName, String password) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+
+
+    }
 
     public String getUserName() {
         return userName;
@@ -26,22 +49,9 @@ public class User {
         return password;
     }
 
-    public Collection<Recipe> getFavoriteRecipes() { return favoriteRecipes; }
-
-    // @Id
-    public long id;
-
-    String userName;
-
-    String firstName;
-
-    String lastName;
-
-    String password;
-
-    public Collection<Recipe> favoriteRecipes = new HashSet<>();
-
-
+    public Collection<Recipe> getFavoriteRecipes() {
+        return favoriteRecipes;
+    }
 
     public void addFavoriteRecipe(final Recipe favoriteRecipe) {
         favoriteRecipes.add(favoriteRecipe);
@@ -51,16 +61,7 @@ public class User {
         favoriteRecipes.remove(favoriteRecipe);
     }
 
-
-
-
-    public User(String userName, String firstName, String lastName, String password) {
-        this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-
-
+    public void setId(int id) {
+        this.id = id;
     }
-
 }
