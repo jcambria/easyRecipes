@@ -4,6 +4,8 @@ import mealsbydad.entities.User;
 import mealsbydad.respositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin
 public class UserController {
@@ -22,5 +24,10 @@ public class UserController {
     @PostMapping("/api/user")
     public User postUser(final @RequestBody User user) {
         return userRepository.save(user);
+    }
+
+    @GetMapping("api/users/{user_id}")
+    public Optional<User> getUser(@PathVariable final long user_id) {
+        return userRepository.findById(user_id);
     }
 }

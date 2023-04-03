@@ -45,4 +45,19 @@ class UserControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    public void getUserByID() throws Exception {
+        User user = new User("userName", "firstName",
+                "lastName", "pass");
+        user.setId(1);
+
+        mvc.perform(MockMvcRequestBuilders.post("/api/user")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getJsonContent(user)))
+                .andExpect(status().isOk());
+        mvc.perform(MockMvcRequestBuilders.get("/api/users/1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
 }
