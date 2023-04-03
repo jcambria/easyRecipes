@@ -16,15 +16,14 @@ h1{
 #recipesButton{
   font-size: 33px;
   border: none;
+  color: #aaa;
   
 }
 
 #recipesButton:hover{
-  text-decoration: underline goldenrod;
+  text-decoration: underline 2px  goldenrod ;
   
 }
-
-
 
 
 

@@ -116,7 +116,7 @@ function RecipeSearchBar() {
     <div className="Sub">
       <form id='recipes' onSubmit={handleSubmit}>
         {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
-        <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">View A Random Recipe</button>
+        <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
       </form>
       {selectedRecipe && (
        <div>

@@ -46,14 +46,14 @@ const Header = () => {
           
           
           </p>
-         <button className='explorebutton'>Explore More</button>
+         <button className='explorebutton'>Learn More</button>
        
          {/* <img id='steak' src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/42a33494-9333-4b6c-aeb6-1687e5a63506-resting-steak.jpg" alt="" />
          */}
         </div>
-        <div className='app__wrapper_img'>
-          <h2>As a Dad We Know You're in a rush...</h2>
-        </div>
+        
+          <h2 id='headerForRecipe'>As a Dad We Know You're in a rush...</h2>
+        
     </div>
   )
 }

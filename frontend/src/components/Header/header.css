@@ -3,12 +3,18 @@ body{
 }
 
 
-h2{
+
+
+#headerForRecipe{
     font-size: 40px;
+    color: #aaa;
     text-align: center;
     margin-top: 20%;
     font-family: cursive;
+
 }
+
+
 
 .app__header{
     background: var(--color-black);
@@ -18,7 +24,7 @@ h2{
     text-align: left;
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: #aaa;
 }
 
 .spoon{
@@ -54,7 +60,7 @@ h2{
 p{
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: #aaa;
     margin: 6rem 0;
     letter-spacing: 0.06rem;
     margin-top: -40px;
@@ -75,7 +81,7 @@ p{
     
 }
 
-#explorebutton:hover{
+.explorebutton:hover{
   background-color: #bf9b30;
   color: #ffffff;
 }

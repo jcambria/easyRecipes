@@ -3,20 +3,27 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import './navbar.css';
 import './logo.png';
+import LoginForm from './LoginForm';
 
 
 
 const Navbar = () => {
 
     const[toggleMenu, setToggleMenu] = useState(false);
+    const [isShowLogin, setIsShowLogin] = useState(true);
+
+    const handleLoginClick = () => {
+    setIsShowLogin((isShowLogin) => !isShowLogin);
+  };
+
 
     
   return (
     <nav className="app_navbar">
         <div className='app__navbar-logo'>
           {/* <img src={require('./MBD.png')} alt="" /> */}
-          <img src="https://images.cooltext.com/5651464.png" alt="" />
-        {/* <img src="https://images.cooltext.com/5650975.png" alt="logo" /> */}
+          {/* <img src="https://images.cooltext.com/5651464.png" alt="" /> */}
+        <img src="https://images.cooltext.com/5650975.png" alt="logo" />
         
         
         </div>
@@ -27,8 +34,27 @@ const Navbar = () => {
             <li className='p__opensans'><a href="#contact">Contact</a></li>
         </ul>
         <div className='app__navbar-login'>
-            <a href="#login" className='p_opensans'> Login</a>
-            <div />
+
+          <button onClick={() => { 
+          handleLoginClick();
+          console.log(isShowLogin)
+          return(
+            <div>
+              <p>
+                jellkopcsaio
+              </p>
+               <LoginForm  />
+            </div>
+           
+          
+          )
+          
+          }}>Login</button>
+
+            {/* <a href="#login"  className='p_opensans'> Login</a> */}
+            {/* <SignInButton handleLoginClick={handleLoginClick} /> */}
+            {/* <LoginForm isShowLogin={isShowLogin} /> */}
+            <div/>
             <a href="/" className='p_opensans'>Your Recipes</a>
         </div>
         <div className='app__navbar-smallscreen'>
