@@ -61,4 +61,7 @@ public class User {
         favoriteRecipes.remove(favoriteRecipe);
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
