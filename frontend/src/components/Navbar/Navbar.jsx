@@ -15,11 +15,13 @@ const Navbar = () => {
 
     const handleLoginClick = () => {
     setIsShowLogin((isShowLogin) => !isShowLogin);
+    console.log(isShowLogin)
   };
 
+  return (
+    <div>
 
     
-  return (
     <nav className="app_navbar">
         <div className='app__navbar-logo'>
           {/* <img src={require('./MBD.png')} alt="" /> */}
@@ -39,14 +41,12 @@ const Navbar = () => {
         <div className="navbar">
           
       <SignInButton handleLoginClick={handleLoginClick} />
-      <LoginForm isShowLogin={isShowLogin} />
     </div>
-
-
             {/* <SignInButton handleLoginClick={handleLoginClick} /> */}
             {/* <LoginForm isShowLogin={isShowLogin} /> */}
             <div/>
-            <a href="#login"  className='p_opensans'> Login</a>
+            {/* <span onClick={() => <SignInButton handleLoginClick={handleLoginClick} /> } > Login</span> */}
+            {/* <a onClick={() => <SignInButton handleLoginClick={handleLoginClick} /> }  className='p_opensans'>Login</a> */}
             <a href="/" className='p_opensans'>Your Recipes</a>
         </div>
         <div className='app__navbar-smallscreen'>
@@ -68,6 +68,8 @@ const Navbar = () => {
 
         </div>
     </nav>
+    <LoginForm isShowLogin={isShowLogin} />
+    </div>
   )
 }
 

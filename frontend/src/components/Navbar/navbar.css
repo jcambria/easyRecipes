@@ -137,6 +137,7 @@
   }
   .login-form{
     width: 100%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +146,8 @@
   }
 
   .form-box{
-    margin-top: 7vh;
+    position: absolute;
+    margin-top: 100vh;
     background: black;
     padding-right: 80px;
     padding-left: 80px;
