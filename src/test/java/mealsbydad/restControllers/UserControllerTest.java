@@ -23,6 +23,10 @@ class UserControllerTest {
     @Autowired
     private MockMvc mvc;
 
+    private static String getJsonContent(Object o) throws JsonProcessingException {
+        return new ObjectMapper().writeValueAsString(o);
+    }
+
     @Test
     public void getUsers() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/api/users").accept(MediaType.APPLICATION_JSON))
@@ -39,10 +43,6 @@ class UserControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(getJsonContent(user)))
                 .andExpect(status().isOk());
-    }
-
-    private static String getJsonContent(Object o) throws JsonProcessingException {
-        return new ObjectMapper().writeValueAsString(o);
     }
 
 }
