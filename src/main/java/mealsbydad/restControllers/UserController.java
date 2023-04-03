@@ -23,4 +23,4 @@ public class UserController {
     public User postUser(final @RequestBody User user) {
         return userRepository.save(user);
     }
-}q
+}
