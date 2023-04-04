@@ -42,10 +42,11 @@ class RecipeControllerTest {
     @Test
     public void postRecipe() throws Exception {
         final User user = new User("user1", "first", "last", "pass");
-        final Recipe recipe = new Recipe(user, "name", "description",
+        user.setId(1);
+        final Recipe recipe = new Recipe("name", "description",
                 "ingredients", "instructions");
 
-        mvc.perform(MockMvcRequestBuilders.post("/api/recipe")
+        mvc.perform(MockMvcRequestBuilders.post("/api/users/1/recipe")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(getJsonContent(recipe)))
