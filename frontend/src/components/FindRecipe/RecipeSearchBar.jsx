@@ -128,7 +128,7 @@ function RecipeSearchBar() {
         <h1>{mealInfo}</h1>
         <p id='foodInfoCat'>Category: {mealCategory}</p>
         <p id='origin'> Origin: {foodOrigin}</p>
-        {/* <p>Instructions: {instructions}</p>   */}
+        <p>Instructions: {instructions}</p>  
         <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
         
   

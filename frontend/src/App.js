@@ -30,7 +30,7 @@ function App() {
 
       <ContactPage />
 
-      <Card />
+      {/* <Card /> */}
   
  
       {/* <Recipe /> */}
