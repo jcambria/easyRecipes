@@ -27,7 +27,7 @@ public class RecipeController {
     @PostMapping("/api/users/{user_id}/recipe")
     public Recipe postRecipe(@PathVariable final long user_id,
                              final @RequestBody Recipe recipe) {
-        userRepository.findById(user_id);
+        recipe.setAuthor(userRepository.findById(user_id).get());
         return recipeRepository.save(recipe);
     }
 

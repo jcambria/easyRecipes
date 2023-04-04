@@ -42,7 +42,7 @@ class RecipeControllerTest {
     @Test
     public void postRecipe() throws Exception {
         final User user = new User("user1", "first", "last", "pass");
-        user.setId(2);
+        user.setId(1);
         final Recipe recipe = new Recipe("name", "description",
                 "ingredients", "instructions");
 
@@ -53,7 +53,7 @@ class RecipeControllerTest {
                         .content(getJsonContent(user)))
                 .andExpect(status().isOk());
 
-        mvc.perform(MockMvcRequestBuilders.post("/api/users/4/recipe")
+        mvc.perform(MockMvcRequestBuilders.post("/api/users/1/recipe")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(getJsonContent(recipe)))
