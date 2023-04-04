@@ -64,4 +64,8 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setAuthoredRecipe(Recipe recipe) {
+        this.setAuthoredRecipe(recipe);
+    }
 }
