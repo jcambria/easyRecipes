@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: .02rem auto;
-    max-width: 500px;
+    margin: 8rem auto;
+    max-width: 480px;
     position: relative; /* add a relative position to the gallery container */
   }
   

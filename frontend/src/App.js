@@ -5,7 +5,8 @@ import Header from './components/Header/Header';
 import RecipeSearchBar from './components/FindRecipe/RecipeSearchBar';
 import RecipeCard from './components/RecipeCard/RecipeCard';
 import ImageGallery from './components/ImgGallery/ImageGallery';
-import ContactPage from './components/ContactPage/ContactPage';
+import Slider1 from './components/Resources/Slider1';
+
 
 
 
@@ -28,7 +29,9 @@ function App() {
       'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?cs=srgb&dl=pexels-ash-376464.jpg&fm=jpg',
       'https://itsallgoodvegan.com/wp-content/uploads/2020/03/img_3427.jpg' ]} />
 
-      <ContactPage />
+      {/* <ContactPage /> */}
+
+      <Slider1 />
 
       {/* <Card /> */}
   
