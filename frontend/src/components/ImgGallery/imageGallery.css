@@ -40,11 +40,11 @@
   }
   
   .arrow.left {
-    left: 10px;
+    left: 15px;
   }
   
   .arrow.right {
-    right: 10px;
+    right: 15px;
   }
   
   .thumbnail-container {
@@ -53,13 +53,16 @@
     position: absolute; /* add an absolute position */
     bottom: 0; /* position the thumbnails at the bottom of the gallery */
     width: 100%; /* make sure the thumbnail container takes up the full width */
-    padding: 1rem 0; /* add some padding to the thumbnail container */
+    padding: 3rem 0; /* add some padding to the thumbnail container */
     flex-wrap: wrap; /* wrap the thumbnails to the next line when they exceed the container width */
   }
 
   #iconicon{
     color: #bf9b30;
-    font-size: 90px;
+    font-size: 120px;
+    margin-top: 100px;
+    margin-bottom: 400px;
+    
   }
   
   .thumbnail {
@@ -70,6 +73,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease;
+    /* margin-bottom: 10px; */
   }
   
   .thumbnail:hover {

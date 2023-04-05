@@ -20,6 +20,7 @@ const ImageGallery = ({ images }) => {
 
   return (
     <div className="image-gallery">
+      <AiFillCamera  id="iconicon" />
       <h1>
           Our Top Picks
         </h1>
@@ -49,7 +50,7 @@ const ImageGallery = ({ images }) => {
         
       </div>
       <div>
-      <AiFillCamera  id="iconicon" />
+  
       </div>
       
     </div>
