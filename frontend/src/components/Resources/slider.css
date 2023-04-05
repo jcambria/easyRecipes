@@ -1,0 +1,118 @@
+/* Image Grid Container */
+.image-grid-container {
+    overflow-x: scroll;
+    padding: 10px;
+  }
+  
+  .space__{
+    padding-top: 200px;
+  }
+  
+  /* Image Grid */
+  .image-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 -10px;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  #reheader{
+    text-align: center;
+  }
+  
+  /* Image Container */
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    /* width: calc(25% - 20px); */
+    /* height: 200px;  */
+    margin: 0 10px;
+    transition: all 0.3s ease;
+  }
+
+  #img{
+    width: 380px;
+    height: 300px;
+
+  }
+  
+  /* Image */
+  /* .image-container img {
+    display: block;
+    width: 300px;
+    height: 400px;
+    object-fit: cover; 
+    transition: all 0.3s ease;
+  } */
+  
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Hovered State */
+  .image-container:hover {
+    transform: scale(1.05);
+    filter: blur(.8px);
+  }
+  
+  .image-container:hover .overlay {
+    opacity: 1;
+  }
+
+  #timer{
+    color: black;
+  }
+ 
+  
+  
+/* #timer{
+width: 200px;
+float: left;
+}
+#timerLink{
+    color: white;
+}
+
+#measurment{
+    width: 200px;
+    
+}
+
+#measurementLink{
+    color: white;
+
+}
+
+#practices{
+    width: 200px;
+}
+
+
+#practicesLink{
+    color: white;
+
+}
+
+#essentials{
+    width: 200px;
+}
+
+#essentialsLink{
+    color: white;
+
+} */

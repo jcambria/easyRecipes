@@ -288,8 +288,8 @@ const BackgroundAnimation = () => (
           y2="129.989"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#f5f5f5" />
-          <stop offset="1" stopColor="#f5f5f5" stopOpacity="0" />
+          <stop stopColor="#bf9b30" />
+          <stop offset="1" stopColor="#bf9b30" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint6_linear"

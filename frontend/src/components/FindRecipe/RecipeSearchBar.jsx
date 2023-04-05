@@ -128,8 +128,9 @@ function RecipeSearchBar() {
         <h1>{mealInfo}</h1>
         <p id='foodInfoCat'>Category: {mealCategory}</p>
         <p id='origin'> Origin: {foodOrigin}</p>
-        <p>Instructions: {instructions}</p>  
-        <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
+        <p>Instructions: {instructions}</p>
+        <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+        {/* <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p> */}
         
   
         </div>
