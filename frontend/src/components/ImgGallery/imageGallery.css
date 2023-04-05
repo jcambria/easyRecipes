@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     margin: 8rem auto;
-    max-width: 480px;
+    max-width: 450px;
     position: relative; /* add a relative position to the gallery container */
   }
   
@@ -55,6 +55,11 @@
     width: 100%; /* make sure the thumbnail container takes up the full width */
     padding: 1rem 0; /* add some padding to the thumbnail container */
     flex-wrap: wrap; /* wrap the thumbnails to the next line when they exceed the container width */
+  }
+
+  #iconicon{
+    color: #bf9b30;
+    font-size: 90px;
   }
   
   .thumbnail {
