@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Optional;
 
@@ -20,6 +21,8 @@ public class Recipe {
     private String ingredients;
     @Lob
     private String instructions;
+
+    HashMap<Integer, String> directions = new HashMap<>();
     @JsonIgnore
     @ManyToMany
     @JoinTable
@@ -31,12 +34,13 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(User author, String name, String description, String ingredients, String instructions) {
+    public Recipe(User author, String name, String description, String ingredients, String instructions, HashMap<Integer, String> directions) {
         this.author = author;
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
         this.instructions = instructions;
+        this.directions = directions;
 
     }
     public Recipe(String name, String description, String ingredients, String instructions) {
