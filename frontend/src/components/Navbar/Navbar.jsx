@@ -72,7 +72,10 @@ const Navbar = () => {
         </div>
     </nav>
     <LoginForm isShowLogin={isShowLogin} />
-    <Register isShowRegister={isShowRegister} />
+    <Register isShowRegister={isShowRegister}
+              isShowLogin={isShowLogin} 
+              setIsShowRegister={setIsShowRegister}
+              setIsShowLogin={setIsShowLogin} />
     </div>
   )
 }

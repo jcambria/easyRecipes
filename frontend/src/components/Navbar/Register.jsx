@@ -4,7 +4,8 @@ import LoginForm from './LoginForm';
 import './loginform.css';
 import Navbar from './Navbar';
 
-function Register({ isShowRegister}) {
+function Register({ isShowRegister, setIsShowRegister, 
+                    isShowLogin, setIsShowLogin}) {
 
   
 
@@ -34,7 +35,8 @@ let handleSubmit = async (e) => {
         setLastName("");
         setPassword("");
         setMessage("User created successfully");
-        
+        setIsShowRegister(!isShowRegister);
+        setIsShowLogin(!isShowLogin);
       } else {
         setMessage("Some error occured");
       }
