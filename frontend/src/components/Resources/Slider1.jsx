@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiFillTool } from "react-icons/ai";
 import './slider.css'; 
 
 
@@ -16,7 +17,10 @@ const Card = () => {
 
   return (
     <div className='space__'>
-      <h1 id='reheader'>Resources</h1>
+      <div>
+      <AiFillTool  id="tool"/>
+      </div>
+      <h1 id='reheader'>Some Helpful Tools</h1>
 
     <div className="image-grid-container">
       <div className="image-grid">
@@ -28,7 +32,7 @@ const Card = () => {
           >
             <img id='img' src="https://assets.epicurious.com/photos/5ed94926dd87b9e5df92999b/16:9/w_2560%2Cc_limit/StatementTimers_HERO_060320_8443.jpg" alt="example image 1" />
             <div id='resources' className="overlay">
-              <p id='timer'>Go To Timer</p>
+              <p id='timer'>TIMER</p>
             </div>
           </div>
         </a>
@@ -42,7 +46,7 @@ const Card = () => {
           >
             <img id='img' src="https://images.unsplash.com/photo-1523901839036-a3030662f220?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGFwZSUyMG1lYXN1cmV8ZW58MHx8MHx8&w=1000&q=80" alt="example image 2" />
             <div className="overlay">
-              <p>Convert</p>
+              <p id='convertMeasurement'> MEASUREMENT CONVERTER</p>
             </div>
           </div>
         </a>
@@ -55,7 +59,7 @@ const Card = () => {
           >
             <img id='img' src="https://d39l2hkdp2esp1.cloudfront.net/img/photo/136620/136620_00_2x.jpg" alt="example image 3" />
             <div className="overlay">
-              <p>Check out Best Practices</p>
+              <p id='practices'>BEST PRACTICES</p>
             </div>
           </div>
         </a>
@@ -68,7 +72,7 @@ const Card = () => {
           >
             <img id='img' src="https://www.fivestarhomefoods.com/blogs/wp-content/uploads/sites/2/2021/07/kitchen-essentials.jpg" alt="example image 4" />
             <div className="overlay">
-              <p> See Kitchen Essentials</p>
+              <p id='kitchen' >Kitchen Essentials</p>
             </div>
           </div>
         </a>

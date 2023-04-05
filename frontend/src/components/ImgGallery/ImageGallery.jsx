@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./imageGallery.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { AiFillCamera, AiFillSave, AiFillTool } from "react-icons/ai";
 
 const ImageGallery = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,10 +41,19 @@ const ImageGallery = ({ images }) => {
             onClick={() => handleImageClick(index)}
           >
             <img src={image} alt={`gallery-thumbnail-${index}`} />
+
           </div>
         ))}
       </div>
+      <div>
+        
+      </div>
+      <div>
+      <AiFillCamera  id="iconicon" />
+      </div>
+      
     </div>
+    
   );
 };
 
