@@ -13,10 +13,13 @@ public class Recipe {
     private int id;
     private String name;
     @Lob
+    @Column(length = 1000000)
     private String description;
     @Lob
+    @Column(length = 1000000)
     private String ingredients;
     @Lob
+    @Column(length = 1000000)
     private String instructions;
     @JsonIgnore
     @ManyToMany
