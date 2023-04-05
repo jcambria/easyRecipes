@@ -5,6 +5,8 @@ import './navbar.css';
 import './logo.png';
 import LoginForm from './LoginForm';
 import SignInButton from './SignInButton';
+import Register from './Register';
+import RegisterButton from './RegisterButton';
 
 
 
@@ -12,11 +14,15 @@ const Navbar = () => {
 
     const[toggleMenu, setToggleMenu] = useState(false);
     const [isShowLogin, setIsShowLogin] = useState(true);
+    const [isShowRegister, setIsShowRegister] = useState(true);
 
     const handleLoginClick = () => {
-    setIsShowLogin((isShowLogin) => !isShowLogin);
-    
-  };
+      setIsShowLogin((isShowLogin) => !isShowLogin);
+    };
+
+    const handleRegisterClick = () => {
+      setIsShowRegister((isShowRegister) => !isShowRegister);
+    };
 
   return (
     <div>
@@ -41,6 +47,7 @@ const Navbar = () => {
         
         <div/>
             <SignInButton handleLoginClick={handleLoginClick} />
+            <RegisterButton handleRegisterClick={handleRegisterClick} />
 
             <a href="/" className='p_opensans'>Your Recipes</a>
 
@@ -65,6 +72,7 @@ const Navbar = () => {
         </div>
     </nav>
     <LoginForm isShowLogin={isShowLogin} />
+    <Register isShowRegister={isShowRegister} />
     </div>
   )
 }
