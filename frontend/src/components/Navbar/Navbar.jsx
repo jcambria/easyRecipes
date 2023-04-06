@@ -41,7 +41,7 @@ const Navbar = () => {
             <a href="#resources">Resources</a>
           </li>
           <li className="p__opensans">
-            <a href="#recipes">Add Recipes</a>
+            <a href="#Addrecipes">Add Recipes</a>
           </li>
         </ul>
         <div className="app__navbar-login">
@@ -92,7 +92,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="p__opensans">
-                  <a onClick={() => setToggleMenu(false)} href="#recipes">
+                  <a onClick={() => setToggleMenu(false)} href="#Addrecipes">
                     Add Recipes
                   </a>
                 </li>
