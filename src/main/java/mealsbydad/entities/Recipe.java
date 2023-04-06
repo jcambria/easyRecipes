@@ -2,10 +2,8 @@ package mealsbydad.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Optional;
 
 @Entity
 public class Recipe {
@@ -15,10 +13,13 @@ public class Recipe {
     private int id;
     private String name;
     @Lob
+    @Column(length = 1000000)
     private String description;
     @Lob
+    @Column(length = 1000000)
     private String ingredients;
     @Lob
+    @Column(length = 1000000)
     private String instructions;
     @JsonIgnore
     @ManyToMany
@@ -45,7 +46,6 @@ public class Recipe {
         this.description = description;
         this.ingredients = ingredients;
         this.instructions = instructions;
-
     }
 
     public int getId() {
