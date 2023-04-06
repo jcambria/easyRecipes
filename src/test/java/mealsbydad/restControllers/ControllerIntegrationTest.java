@@ -2,6 +2,7 @@ package mealsbydad.restControllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import mealsbydad.entities.Recipe;
 import mealsbydad.entities.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,52 +13,72 @@ import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD) // reset the database for each test
 @AutoConfigureMockMvc
-class UserControllerTest {
+class ControllerIntegrationTest {
+
     @Autowired
     private MockMvc mvc;
 
+    //Helper function to turn an object into JSON content
     private static String getJsonContent(Object o) throws JsonProcessingException {
         return new ObjectMapper().writeValueAsString(o);
     }
 
     @Test
-    public void getUsers() throws Exception {
+    public void postRecipe() throws Exception {
+
+        //Returns an empty recipe array
+        mvc.perform(MockMvcRequestBuilders.get("/api/recipes").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(equalTo("[]")));
+
+        //Returns an empty user array
         mvc.perform(MockMvcRequestBuilders.get("/api/users").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(equalTo("[]")));
 
-    @Test
-    public void postUser() throws Exception {
-        User user = new User("userName", "firstName",
-                "lastName", "pass");
 
-        mvc.perform(MockMvcRequestBuilders.post("/api/user")
-                        .accept(MediaType.APPLICATION_JSON)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(getJsonContent(user)))
-                .andExpect(status().isOk());
-    }
+        //Set up a new user
+        final User user = new User("user1", "first", "last", "pass");
 
-    @Test
-    public void getUserByID() throws Exception {
-        User user = new User("userName", "firstName",
-                "lastName", "pass");
+        //Make sure that users id is 1
         user.setId(1);
 
+        //Set up a new recipe
+        final Recipe recipe = new Recipe("name", "description",
+                "ingredients", "instructions");
+
+        //Make sure that recipe id is 1
+        recipe.setId(1);
+
+        //POST request to create a new User
         mvc.perform(MockMvcRequestBuilders.post("/api/user")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(getJsonContent(user)))
                 .andExpect(status().isOk());
+
+        //POST request to create a new recipe by that user
+        mvc.perform(MockMvcRequestBuilders.post("/api/users/1/recipe")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getJsonContent(recipe)))
+                .andExpect(status().isOk());
+
+        //GET request to retrieve the recipe with an id of 1
+        mvc.perform(MockMvcRequestBuilders.get("/api/recipes/1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        //GET request to retrieve the user with an id of 1
         mvc.perform(MockMvcRequestBuilders.get("/api/users/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
-
 }
