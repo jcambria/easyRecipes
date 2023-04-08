@@ -113,11 +113,16 @@ function RecipeSearchBar() {
   };
 
   return (
+    
     <div className="Sub">
-      <form id='recipes' onSubmit={handleSubmit}>
+      
+      <div id='recipes'>
+        
+      <form  onSubmit={handleSubmit}>
         {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
         <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
       </form>
+      </div>
       {selectedRecipe && (
        <div>
           {/* <AiFillBook id='play' onClick={() => getMealInfo()} /> */}

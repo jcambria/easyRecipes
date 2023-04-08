@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
-
-import './loginform.css';
-import Navbar from './Navbar';
+import './register.css';
 
 function Register({ isShowRegister, setIsShowRegister, 
                     isShowLogin, setIsShowLogin}) {
 
-  
 
 const [userName, setUserName] = useState("");
 const [firstName, setFirstName] = useState("");
@@ -46,8 +43,8 @@ let handleSubmit = async (e) => {
   };
 
     return (
-      <div className={`${isShowRegister ? "active" : ""} show`}>
-        <div className="login-form">
+      <div className={`${isShowRegister ? "active" : ""} show`} >
+        <div className="login-form" >
             <div className="form-box solid">
                 <form onSubmit={handleSubmit}>
                     <h1 className="login-text">Register</h1>

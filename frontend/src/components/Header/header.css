@@ -2,6 +2,14 @@ body{
     background-image: url();
 }
 
+hr{
+    border: none; /* remove the default border */
+    height: 5px; /* set the height of the line */
+    background-color: #bf9b30; /* set the color of the line */
+    margin: 50px 0; /* add some spacing around the line */
+    width: 90px;
+   
+}
 
 
 
