@@ -2,7 +2,9 @@ package mealsbydad.restControllers;
 
 import mealsbydad.entities.User;
 import mealsbydad.respositories.UserRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
@@ -26,8 +28,10 @@ public class UserController {
         return userRepository.save(user);
     }
 
-    @GetMapping("api/users/{user_id}")
-    public Optional<User> getUser(@PathVariable final long user_id) {
-        return userRepository.findById(user_id);
+    @GetMapping("/api/users/{user_id}")
+    public User getUserByID(final @PathVariable long user_id) {
+        final Optional<User> perhapsUser = userRepository.findById(user_id);
+        return perhapsUser
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot find user " + user_id));
     }
 }

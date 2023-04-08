@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import LoginForm from './LoginForm';
-
 import './loginform.css';
-import Navbar from './Navbar';
 
 function Register({ isShowRegister, setIsShowRegister, 
                     isShowLogin, setIsShowLogin}) {
-
-  
 
 const [userName, setUserName] = useState("");
 const [firstName, setFirstName] = useState("");
@@ -28,7 +23,7 @@ let handleSubmit = async (e) => {
           password: password,
         }),
       });
-      let resJson = await res.json();
+
       if (res.status === 200) {
         setUserName("");
         setFirstName("");
@@ -38,7 +33,7 @@ let handleSubmit = async (e) => {
         setIsShowRegister(!isShowRegister);
         setIsShowLogin(!isShowLogin);
       } else {
-        setMessage("Some error occured");
+        setMessage("Error occurred");
       }
     } catch (err) {
       console.log(err);
