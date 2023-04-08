@@ -18,11 +18,22 @@ const Card = () => {
   return (
     <div className='space__'>
       <div>
-      <AiFillTool  id="tool"/>
-      </div>
-      <h1 id='reheader'>Some Helpful Tools</h1>
 
-    <div className="image-grid-container">
+        
+
+      <AiFillTool  id="tool"/>
+      <div id='resources'>
+
+      </div>
+    
+      </div>
+      <div id='resources'>
+
+      </div>
+    
+      <h1  id='reheader'>Some Helpful Tools</h1>
+
+    <div   className="image-grid-container">
       <div className="image-grid">
         <a href="https://www.timeanddate.com/timer/">
           <div
@@ -31,7 +42,7 @@ const Card = () => {
             onMouseLeave={handleMouseLeave}
           >
             <img id='img' src="https://assets.epicurious.com/photos/5ed94926dd87b9e5df92999b/16:9/w_2560%2Cc_limit/StatementTimers_HERO_060320_8443.jpg" alt="example image 1" />
-            <div id='resources' className="overlay">
+            <div className="overlay">
               <p id='timer'>TIMER</p>
             </div>
           </div>

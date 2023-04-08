@@ -1,0 +1,95 @@
+/* Default styles */
+footer {
+    background-color: #0C0C0C;
+    color: #aaa;
+    font-size: 1.2rem;
+    padding: 4rem 0;
+  }
+
+  .footer{
+   display: flex;
+   height: 1px;
+   background-color: #aaa;
+   width: 100px;
+  }
+  
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .phone, .email {
+    display: flex;
+    align-items: center;
+  }
+  
+  .phone a, .email a {
+    color: #aaaaaa;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .phone a:hover, .email a:hover {
+    color: #ffffff;
+  }
+  
+  .phone i, .email i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .email i {
+    margin-right: 0.3rem;
+  }
+  
+  /* Styles for devices with width >= 768px */
+  @media (min-width: 768px) {
+    footer {
+      padding: 4rem;
+    }
+  
+    .footer-info {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .contact-details {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Styles for devices with width < 768px */
+  @media (max-width: 767px) {
+    footer {
+      padding: 2rem;
+    }
+  
+    .footer-info {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .contact-details {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  
+    .phone, .email {
+      margin-bottom: 1rem;
+    }
+  }
+  

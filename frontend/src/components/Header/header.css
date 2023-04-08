@@ -3,11 +3,13 @@ body{
 }
 
 hr{
-    border: none; /* remove the default border */
-    height: 5px; /* set the height of the line */
-    background-color: #bf9b30; /* set the color of the line */
-    margin: 50px 0; /* add some spacing around the line */
+    border: none;
+    margin: 50px 0; 
     width: 90px;
+    display: flex;
+    height: 1px;
+    background-color: #aaa;
+    width: 100px;
    
 }
 
