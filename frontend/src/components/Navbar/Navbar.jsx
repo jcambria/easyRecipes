@@ -57,8 +57,8 @@ const Navbar = () => {
             <>
               <LogoutButton handleLogoutClick={handleLogoutClick} user={user} />
               <a href="/" className="p_opensans">
-              <AddRecipeButton handleAddRecipeClick={handleAddRecipeClick} user={user} />
               </a>
+              <AddRecipeButton handleAddRecipeClick={handleAddRecipeClick} />
             </>
           )}
           {!user && (
@@ -121,6 +121,7 @@ const Navbar = () => {
       />
       <RecipeForm
        isShowRecipeForm ={isShowRecipeForm}
+       user={user}
        />
     </div>
   );
