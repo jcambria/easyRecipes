@@ -89,13 +89,6 @@ function RecipeSearchBar() {
     setCount(count + 1);
   }
 
-
-
-  // const handleChange = (event) => {
-  //   setQuery(event.target.value);
-  //   setSelectedRecipe(null); // Reset the selected recipe when the query changes
-  // };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const matchingRecipes = recipes.filter(recipe =>
@@ -130,11 +123,10 @@ function RecipeSearchBar() {
         <div className='card'>
         <img id='foodimg' src={mealImg} alt="" />
         <div className='container'>
-        <h1>{mealInfo}</h1>
-        <p id='foodInfoCat'>Category: {mealCategory}</p>
-        <p id='origin'> Origin: {foodOrigin}</p>
-        <p>Instructions: {instructions}</p>
-        <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+        <h1 id='foodtitle'>{mealInfo}</h1>
+        <p id='foodInfoCat'>Category: {mealCategory} <br />  Origin: {foodOrigin} </p>
+        <p id='foodinfoIns'>Instructions: {instructions}</p>
+        {/* <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   */}
         {/* <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p> */}
         
   
