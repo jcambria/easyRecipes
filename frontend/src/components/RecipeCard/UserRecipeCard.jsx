@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from 'axios';
 
 function UserRecipeCard() {
@@ -6,14 +6,15 @@ const [recipeName, setRecipeName] = useState("")
 const [recipeDescription, setRecipeDescription] = useState("")
 const [recipeIngredients, setRecipeIngredients] = useState("")
 const [recipeInstructions, setRecipeInstructions] = useState("")
+const [data, setData] = useState("")
 
 const getRecipe = () => {
     Axios.get('http://localhost:8080/api/recipes').then((response) => {
-
-      setRecipeName(response.data[0].name);
-      setRecipeDescription(response.data[0].description)
-      setRecipeIngredients(response.data[0].ingredients)
-      setRecipeInstructions(response.data[0].instructions)
+      const randomNumber = Math.floor(Math.random() * 4);
+      setRecipeName(response.data[randomNumber].name);
+      setRecipeDescription(response.data[randomNumber].description)
+      setRecipeIngredients(response.data[randomNumber].ingredients)
+      setRecipeInstructions(response.data[randomNumber].instructions)
       console.log(response)
 
 
