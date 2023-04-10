@@ -6,11 +6,26 @@ footer {
     padding: 4rem 0;
   }
 
+  .h3{
+    font-size: 30px;
+  }
+
+  .link:hover{
+  color: white;
+  }
+
+
+
   .footer{
    display: flex;
    height: 1px;
    background-color: #aaa;
    width: 100px;
+   margin-bottom: 60px;
+  }
+
+  p{
+    margin-top: 20px;
   }
   
   .footer-info {
@@ -20,38 +35,20 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
   }
+
   
-  .contact-details {
+  
+  /* .contact-details {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.5rem;
-  }
+    margin-bottom: 3.5rem;
+  } */
   
-  .phone, .email {
-    display: flex;
-    align-items: center;
-  }
   
-  .phone a, .email a {
-    color: #aaaaaa;
-    text-decoration: none;
-    margin-left: 1rem;
-    transition: all 0.2s ease;
-  }
   
-  .phone a:hover, .email a:hover {
-    color: #ffffff;
-  }
+
   
-  .phone i, .email i {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-  }
-  
-  .email i {
-    margin-right: 0.3rem;
-  }
   
   /* Styles for devices with width >= 768px */
   @media (min-width: 768px) {
