@@ -6,11 +6,8 @@ import RecipeSearchBar from './components/FindRecipe/RecipeSearchBar';
 import RecipeCard from './components/RecipeCard/RecipeCard';
 import ImageGallery from './components/ImgGallery/ImageGallery';
 import Slider1 from './components/Resources/Slider1';
-<<<<<<< HEAD
-import RecipeForm from './components/AddUserRecipe/RecipeForm';
-=======
 import UserRecipeCard from './components/RecipeCard/UserRecipeCard';
->>>>>>> origin/main
+
 
 
 
@@ -38,7 +35,7 @@ function App() {
       {/* <ContactPage /> */}
 
       <Slider1 />
-      <RecipeForm  />
+
       {/* <Card /> */}
   
  

@@ -8,10 +8,13 @@ import SignInButton from "./SignInButton";
 import Register from "./Register";
 import RegisterButton from "./RegisterButton";
 import LogoutButton from "./LogoutButton";
+import RecipeForm from '../AddUserRecipe/RecipeForm';
+import AddRecipeButton from "./AddRecipeButton";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [isShowLogin, setIsShowLogin] = useState(true);
   const [isShowRegister, setIsShowRegister] = useState(true);
+  const [isShowRecipeForm, setIsShowRecipeForm] = useState(true);
   const [user, setUser] = useState();
   const handleLoginClick = () => {
     setIsShowLogin((isShowLogin) => !isShowLogin);
@@ -21,6 +24,9 @@ const Navbar = () => {
   };
   const handleRegisterClick = () => {
     setIsShowRegister((isShowRegister) => !isShowRegister);
+  };
+  const handleAddRecipeClick = () => {
+    setIsShowRecipeForm((isShowRecipeForm) => !isShowRecipeForm);
   };
   return (
     <div>
@@ -51,7 +57,7 @@ const Navbar = () => {
             <>
               <LogoutButton handleLogoutClick={handleLogoutClick} user={user} />
               <a href="/" className="p_opensans">
-                Your Recipes
+              <AddRecipeButton handleAddRecipeClick={handleAddRecipeClick} user={user} />
               </a>
             </>
           )}
@@ -113,6 +119,9 @@ const Navbar = () => {
         setIsShowRegister={setIsShowRegister}
         setIsShowLogin={setIsShowLogin}
       />
+      <RecipeForm
+       isShowRecipeForm ={isShowRecipeForm}
+       />
     </div>
   );
 };
