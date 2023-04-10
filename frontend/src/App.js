@@ -8,15 +8,7 @@ import ImageGallery from './components/ImgGallery/ImageGallery';
 import Slider1 from './components/Resources/Slider1';
 import UserRecipeCard from './components/RecipeCard/UserRecipeCard';
 import Footer from './components/Footer/Footer';
-
-
-
-
-
-
-
-import Card from './components/Resources/Card';
-
+import ShoppingList from './ShoppingList/ShoppingList';
 
 
 function App() {
@@ -45,7 +37,7 @@ function App() {
   
  
       {/* <Recipe /> */}
-
+      <ShoppingList />
       <UserRecipeCard />
       <Footer />
 
