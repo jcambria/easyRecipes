@@ -41,7 +41,9 @@
     position: relative;
     overflow: hidden;
     /* width: calc(25% 20px); */
+   
     height: 200px; 
+    width: 300px;
     margin: 0 26px;
     transition: all 0.3s ease;
   }
