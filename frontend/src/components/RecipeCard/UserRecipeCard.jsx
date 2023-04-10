@@ -1,4 +1,4 @@
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import Axios from 'axios';
 
 function UserRecipeCard() {
@@ -6,7 +6,6 @@ const [recipeName, setRecipeName] = useState("")
 const [recipeDescription, setRecipeDescription] = useState("")
 const [recipeIngredients, setRecipeIngredients] = useState("")
 const [recipeInstructions, setRecipeInstructions] = useState("")
-
 
 const getRecipe = () => {
     Axios.get('http://localhost:8080/api/recipes').then((response) => {
