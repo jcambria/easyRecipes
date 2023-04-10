@@ -12,9 +12,7 @@ import Footer from './components/Footer/Footer';
 
 
 
-
-
-import Card from './components/Resources/Card';
+import ShoppingList from './ShoppingList/ShoppingList';
 
 
 
@@ -40,8 +38,11 @@ function App() {
  
       {/* <Recipe /> */}
 
+      <ShoppingList />
+
       <UserRecipeCard />
       <Footer />
+
 
     </div>
   );
