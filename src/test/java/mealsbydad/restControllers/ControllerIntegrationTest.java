@@ -80,5 +80,20 @@ class ControllerIntegrationTest {
         //GET request to retrieve the user with an id of 1
         mvc.perform(MockMvcRequestBuilders.get("/api/users/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+
+        //GET request to return 400 error if user doesn't exist
+        mvc.perform(MockMvcRequestBuilders.get("/api/users/100").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+        //GET request to return 400 error if recipe doesn't exist
+        mvc.perform(MockMvcRequestBuilders.get("/api/recipes/100").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+        //POST request to return 400 error if recipe is created by a non-existent user
+        mvc.perform(MockMvcRequestBuilders.post("/api/users/100/recipe")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getJsonContent(recipe)))
+                .andExpect(status().isNotFound());
     }
 }

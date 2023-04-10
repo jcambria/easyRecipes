@@ -1,17 +1,3 @@
-body{
-    background-image: url();
-}
-
-hr{
-    border: none;
-    margin: 50px 0; 
-    width: 90px;
-    display: flex;
-    height: 1px;
-    background-color: #aaa;
-    width: 100px;
-   
-}
 
 
 
@@ -21,14 +7,9 @@ hr{
     text-align: center;
     margin-top: 20%;
     font-family: cursive;
-
 }
-
-
-
 .app__header{
     background: var(--color-black);
-    
 }
 .app__header-h1{
     text-align: left;
@@ -36,18 +17,9 @@ hr{
     font-family: 'Times New Roman', Times, serif;
     color: #aaa;
 }
-
 .spoon{
     color: #bf9b30;
 }
-
-/* #header__intro{
-    letter-spacing: 0.06rem;
-    
-    
-} */
-
-
 #slogon{
     font-family: 'Times New Roman', Times, serif;
     color: #bf9b30;
@@ -57,16 +29,10 @@ hr{
     font-size: 26px;
     text-align: left;
     margin: 11.5rem 0;
-
 }
-
 .icon{
     text-align: left;
 }
-
-
-
-   
 p{
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
@@ -75,7 +41,6 @@ p{
     letter-spacing: 0.06rem;
     margin-top: -40px;
 }
-
 .explorebutton{
   margin-top: -350px;
   background-color: #3c3c3c;
@@ -87,15 +52,11 @@ p{
   border: none;
   cursor: pointer;
   transition: all 0.6s ease-in-out;
-  
-    
 }
-
 .explorebutton:hover{
   background-color: #bf9b30;
   color: #ffffff;
 }
-
 .animation{
     width: 320px;
     float: right;
@@ -103,6 +64,4 @@ p{
     padding-right: auto;
     margin-right: auto;
     margin-left: auto;
-
-    /* display: flex; */
 }
