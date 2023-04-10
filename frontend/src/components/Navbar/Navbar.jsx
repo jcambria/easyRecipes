@@ -121,6 +121,7 @@ const Navbar = () => {
       />
       <RecipeForm
        isShowRecipeForm ={isShowRecipeForm}
+       setIsShowRecipeForm ={setIsShowRecipeForm}
        user={user}
        />
     </div>

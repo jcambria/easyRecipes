@@ -20,17 +20,11 @@ function RecipeForm({ isShowRecipeForm, setIsShowRecipeForm,
         setRecipeDescription([...recipeDescription, '']);
     }
 
-//     const handleRemoveRecipe = (index) => {
-//         const newUserRecipe = [...recipeDescription];
-//         newUserRecipe.splice(index, 1);
-//         setRecipeDescription(newUserRecipe);
-//     }
-
 let handleSubmit = async (e) => { console.log(user.id)
     e.preventDefault();
-//     let userId = user.id;
+
     try {
-      let res = await fetch("http://localhost:8080/api/users/${user.id}/recipe", {
+      let res = await fetch(`http://localhost:8080/api/users/${user.id}/recipe`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -46,7 +40,6 @@ let handleSubmit = async (e) => { console.log(user.id)
               setRecipeDescription("");
               setRecipeIngredients("");
               setRecipeInstructions("");
-
               setIsShowRecipeForm(!isShowRecipeForm);
 
             } else {
