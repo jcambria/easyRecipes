@@ -7,7 +7,7 @@ function Footer() {
     
     <footer>
         <hr className='footer'/>
-      <div className="footer-info" id='footer'>
+      <div className="footer-info" id='contact'>
         <h3 className='h3'>CONTACT US
           <br />
           <a  href="tel:555-123-4567" className="link"> <GiPhone /> 555-123-4567</a>

@@ -55,7 +55,7 @@
   }
 
   .item:hover{
-   box-shadow: 0 0 0px 1px rgba(251, 251, 251, 0.2);
+   box-shadow: 0 0 4px 1px rgba(251, 251, 251, 0.8);
     /* background-color: #bf9b30; */
   }
   

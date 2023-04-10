@@ -46,7 +46,7 @@ const Header = () => {
           
           
           </p>
-         <button  className='explorebutton' > <a href="#footer">Learn More</a></button>
+         <button  className='explorebutton' > <a href="#contact">Learn More</a></button>
 
          <hr id='headerHR'  />
        
