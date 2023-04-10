@@ -30,7 +30,7 @@ let handleSubmit = async (e) => { console.log(user.id)
     e.preventDefault();
 //     let userId = user.id;
     try {
-      let res = await fetch("http://localhost:8080/api/users/user.id/recipe", {
+      let res = await fetch("http://localhost:8080/api/users/${user.id}/recipe", {
         method: "POST",
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({
