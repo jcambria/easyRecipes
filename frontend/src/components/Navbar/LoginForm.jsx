@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./loginform.css";
-import axios from "axios";
 
 function LoginForm({ isShowLogin, user, setUser, setIsShowLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [userCollection, setUserCollection] = useState();
   const [passPlaceHolder, setPassPlaceHolder] = useState("password");
   const [userPlaceHolder, setUserPlaceHolder] = useState("username");
 
@@ -19,8 +17,8 @@ function LoginForm({ isShowLogin, user, setUser, setIsShowLogin }) {
       let resJson = await res.json();
       if (res.status === 200) {
         for (let i = 0; i < resJson.length; i++) {
-          if (resJson[i].userName == username) {
-            if (resJson[i].password == password) {
+          if (resJson[i].userName === username) {
+            if (resJson[i].password === password) {
               setUser(resJson[i]);
               setIsShowLogin(!isShowLogin);
             } else {
