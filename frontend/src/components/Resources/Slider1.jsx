@@ -41,7 +41,7 @@ const Card = () => {
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
           >
-            <img id='img' src="https://assets.epicurious.com/photos/5ed94926dd87b9e5df92999b/16:9/w_2560%2Cc_limit/StatementTimers_HERO_060320_8443.jpg" alt="example image 1" />
+            <img id='img' src="https://assets.epicurious.com/photos/5ed94926dd87b9e5df92999b/16:9/w_2560%2Cc_limit/StatementTimers_HERO_060320_8443.jpg" alt="example 1" />
             <div className="overlay">
               <p id='timer'>TIMER</p>
             </div>
@@ -55,7 +55,7 @@ const Card = () => {
             onMouseEnter={() => handleMouseEnter(1)}
             onMouseLeave={handleMouseLeave}
           >
-            <img id='img' src="https://images.unsplash.com/photo-1523901839036-a3030662f220?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGFwZSUyMG1lYXN1cmV8ZW58MHx8MHx8&w=1000&q=80" alt="example image 2" />
+            <img id='img' src="https://images.unsplash.com/photo-1523901839036-a3030662f220?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGFwZSUyMG1lYXN1cmV8ZW58MHx8MHx8&w=1000&q=80" alt="example 2" />
             <div className="overlay">
               <p id='convertMeasurement'> MEASUREMENT CONVERTER</p>
             </div>
@@ -68,7 +68,7 @@ const Card = () => {
             onMouseEnter={() => handleMouseEnter(2)}
             onMouseLeave={handleMouseLeave}
           >
-            <img id='img' src="https://d39l2hkdp2esp1.cloudfront.net/img/photo/136620/136620_00_2x.jpg" alt="example image 3" />
+            <img id='img' src="https://d39l2hkdp2esp1.cloudfront.net/img/photo/136620/136620_00_2x.jpg" alt="example 3" />
             <div className="overlay">
               <p id='practices'>BEST PRACTICES</p>
             </div>
@@ -81,7 +81,7 @@ const Card = () => {
             onMouseEnter={() => handleMouseEnter(3)}
             onMouseLeave={handleMouseLeave}
           >
-            <img id='img' src="https://www.fivestarhomefoods.com/blogs/wp-content/uploads/sites/2/2021/07/kitchen-essentials.jpg" alt="example image 4" />
+            <img id='img' src="https://www.fivestarhomefoods.com/blogs/wp-content/uploads/sites/2/2021/07/kitchen-essentials.jpg" alt="example 4" />
             <div className="overlay">
               <p id='kitchen' >Kitchen Essentials</p>
             </div>
