@@ -31,7 +31,7 @@ const Card = () => {
 
       </div>
     
-      <h1  id='reheader'>Some Helpful Tools</h1>
+      <h1 id='reheader'>Some Helpful Tools</h1>
 
     <div   className="image-grid-container">
       <div className="image-grid">
