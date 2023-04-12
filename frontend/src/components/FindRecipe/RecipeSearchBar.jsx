@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {  AiOutlineHeart } from "react-icons/ai";
 import './findrecipe.css';
 import Axios from 'axios';
 
 
 function RecipeSearchBar() {
-  const [query, setQuery] = useState('');
+  const [query] = useState('');
   const [mealInfo, setMealInfo] = useState("")
   const [mealImg, setMealImg] = useState("")
   const [mealCategory, setMealCategory] = useState("")
@@ -39,7 +39,7 @@ function RecipeSearchBar() {
  
 
   
-  const [recipes, setRecipes] = useState([
+  const [recipes] = useState([
     {
       name: 'Spaghetti Bolognese',
       ingredients: ['spaghetti', 'ground beef', 'tomato sauce', 'onion', 'garlic'],
@@ -71,6 +71,10 @@ function RecipeSearchBar() {
 
 
   ]);
+
+
+  
+
 
   
 
@@ -110,8 +114,8 @@ function RecipeSearchBar() {
       setMeasurement8(response.data.meals[0].strMeasure8)
       setMeasurement9(response.data.meals[0].strMeasure9)
       setMeasurement10(response.data.meals[0].strMeasure10)
-      
-      
+
+     
 
     })
   }
@@ -138,6 +142,9 @@ function RecipeSearchBar() {
       setSelectedRecipe(null);
     }
   };
+
+  
+
 
   return (
     
@@ -235,12 +242,14 @@ function RecipeSearchBar() {
         <div className='container'>
         <h1 id='foodtitle'>{mealInfo}</h1>
         <p id='foodInfoCat'>Category: {mealCategory} <br />  Origin: {foodOrigin} </p>
-        <p id='foodinfoIns'>Instructions: {instructions}</p>
-        <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-        {/* <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p> */}
+        <p id='foodinfoIns'>Instructions: <br />{instructions}</p>
+        
+        {/* <iframe src={howToVideo} frameborder="0"></iframe> */}
+        {/* <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   */}
+        <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
         </div>
         
-          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart id='icon' /></button> </p>
+          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart id='icon'/></button> </p>
         </div>
         
         </div>
