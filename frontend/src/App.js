@@ -15,9 +15,9 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Search />
       <Header />
       <RecipeSearchBar />
+      <Search/>
       <RecipeCard  />
       <Slider1 />
       <ShoppingList />
