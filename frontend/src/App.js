@@ -16,7 +16,6 @@ function App() {
       <Navbar />
       <Header />
       <RecipeSearchBar />
-      <RecipeCard  />
       <Slider1 />
       <ShoppingList />
       <RecipesList />
