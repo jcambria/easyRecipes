@@ -8,8 +8,8 @@ const Search = () => {
     const [recipeDescription, setRecipeDescription] = useState("")
     const [recipeIngredients, setRecipeIngredients] = useState("")
     const [recipeInstructions, setRecipeInstructions] = useState("")
-    const [recipe,setRecipe] = useState('')
-    const [showRecipeName, setShowRecipeName] = useState(false);
+    const [isHidden,setIsHidden] = useState("hidden")
+
    
     useEffect(() =>{
 if(value.length >0){
@@ -54,33 +54,42 @@ const getRecipe = (name) => {
        
         
     })
-    setRecipe([recipeName,recipeDescription,recipeIngredients,recipeInstructions]);
+    // setRecipe([recipeName,recipeDescription,recipeIngredients,recipeInstructions]);
    
   }
+function handleRecipeClick (recipe) {
+    getRecipe(recipe)
+    setValue('')
+    console.log(recipe)
+    setIsHidden("text-white")
+}
     
 
   return (
     <div className='flex flex-col justify-center items-center '>
         <h1 className="text-4xl text-[#AAAAAA] font-bold mb-10">Recipe Search</h1>
-        <input type ='text' placeholder='Search for a Recipe...' className='searchBar text-bold  bg-white  text-3xl text-black mb-5' onChange={(event ) => setValue(event.target.value)} value={value}/>
+        <input type ='text' placeholder='Search for a Recipe...' className='searchBar text-bold  bg-white  text-3xl text-black  ' onChange={(event ) => setValue(event.target.value)} value={value} />
        
-        <div className='searchBack '>
-    {result.map((result,index) => (
-        <a  onClick={() => { getRecipe(result) }} key={index} >
+        <div className='searchBack flex flex-col justify-center items-center '>
+    {result.map((recipe,index) => (
+        <a href onClick={() => handleRecipeClick(recipe)} key={index} >
             
 
-        <div className='searchEntry text-center text-white text-xl' onClick={() => setShowRecipeName(!showRecipeName)}>
-                {result}      
+        <div className='  w-[250px] h-[30px] bg-white shadow-black overflow-hidden overflow-y-auto hover:bg-gray-300 cursor-pointer font-bold ' >
+                {recipe}      
+                
         </div>
         </a>   
+        // ,console.log (recipe)
     ))}
+
     <div className='text-center'>
     <h1 className=' text-white'>{recipeName}</h1>
 <h2>{recipeDescription}</h2>
 <br />
-<h3 className='text-white'>Ingredients</h3>
+<h3 className = {isHidden}>Ingredients</h3>
 <p>{recipeIngredients}</p>
-<h3 className='text-white'>Instructions</h3>
+<h3 className = {isHidden} >Instructions</h3>
 <p>{recipeInstructions}</p>
     </div>
         </div>
