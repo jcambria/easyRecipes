@@ -12,14 +12,13 @@ export default function RecipesList() {
            () => fetch("http://localhost:8080/api/recipes")
                       .then(res => res.json())
                       .then(response => setRecipes(response)),
-           10000);
+           1000);
         return () => clearInterval(periodicallyFetch)
     }, [])
-
     function handleRecipeClick(recipe) {
         setRecipeCard(recipe)
         setAuthor(recipe.author)
-        setIsShowRecipeCard(true)
+        setIsShowRecipeCard(!isShowRecipeCard)
       };
 
 
