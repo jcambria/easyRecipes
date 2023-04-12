@@ -8,12 +8,14 @@ import Slider1 from './components/Resources/Slider1';
 import UserRecipeCard from './components/RecipeCard/UserRecipeCard';
 import Footer from './components/Footer/Footer';
 import ShoppingList from './ShoppingList/ShoppingList';
+import Search from './components/FindRecipe/Search';
 
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Search />
       <Header />
       <RecipeSearchBar />
       <RecipeCard  />
