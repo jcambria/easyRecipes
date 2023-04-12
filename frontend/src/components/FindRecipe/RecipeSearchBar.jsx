@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { AiFillAlert, AiFillAlipayCircle, AiFillBook, AiFillPauseCircle, AiOutlineExport, AiOutlineHeart, AiOutlinePlayCircle } from "react-icons/ai";
+import React, { useEffect, useState } from 'react';
+import {  AiOutlineHeart } from "react-icons/ai";
 import './findrecipe.css';
 import Axios from 'axios';
-import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 function RecipeSearchBar() {
@@ -14,6 +13,8 @@ function RecipeSearchBar() {
   const [howToVideo, setHowtoVideo] = useState("")
   const [instructions, setInstructions] = useState("")
   const [foodOrigin, setFoodOrigin] = useState("")
+  const [display, setDisplay] = useState([])
+
  
 
   
@@ -53,16 +54,8 @@ function RecipeSearchBar() {
   
 
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-
+  
   const [count, setCount] = useState(0);
-
-  const getJoke = () => {
-
-    Axios.get("https://official-joke-api.appspot.com/random_joke").then((response) => {
-      setJoke(response.data.setup + " . . . " + response.data.punchline)
-    })
-  }
-
 
 
   const getMealInfo = () => {
@@ -75,13 +68,23 @@ function RecipeSearchBar() {
       setHowtoVideo(response.data.meals[0].strYoutube)
       setInstructions(response.data.meals[0].strInstructions)
       setFoodOrigin(response.data.meals[0].strArea)
-
+      
 
     })
   }
 
+    
 
+    useEffect(() => {
+      Axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+      .then(response => response.json())
+      .then(data => setDisplay(data))
+      .catch(err => console.log(err))
+    }, [] )
 
+  
+
+  
 
 
 
@@ -101,6 +104,7 @@ function RecipeSearchBar() {
     if (matchingRecipes) {
       setSelectedRecipe(matchingRecipes[0]);
     } else {
+
       setSelectedRecipe(null);
     }
   };
@@ -112,13 +116,12 @@ function RecipeSearchBar() {
       <div id='recipes'>
         
       <form  onSubmit={handleSubmit}>
-        {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
+        
         <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
       </form>
       </div>
       {selectedRecipe && (
        <div>
-          {/* <AiFillBook id='play' onClick={() => getMealInfo()} /> */}
            <button onClick={() => getMealInfo()}  type="submit">Next</button>
         <div className='card'>
         <img id='foodimg' src={mealImg} alt="" />
@@ -126,16 +129,14 @@ function RecipeSearchBar() {
         <h1 id='foodtitle'>{mealInfo}</h1>
         <p id='foodInfoCat'>Category: {mealCategory} <br />  Origin: {foodOrigin} </p>
         <p id='foodinfoIns'>Instructions: {instructions}</p>
-        {/* <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   */}
+        <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
         {/* <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p> */}
         
-  
         </div>
-        {/* <AiOutlineHeart id='newLike' onClick={handleCount}  /> */}
         
-          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
+          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart id='icon' /></button> </p>
         </div>
-        {/* <RecipeCard /> */}
+        
         </div>
         
       )}
