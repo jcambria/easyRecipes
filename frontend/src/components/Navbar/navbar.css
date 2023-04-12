@@ -1,6 +1,6 @@
 .app_navbar{
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
     width: 100%;
     display: flex;
     justify-content: space-between;
