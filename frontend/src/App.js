@@ -8,6 +8,7 @@ import Slider1 from './components/Resources/Slider1';
 import UserRecipeCard from './components/RecipeCard/UserRecipeCard';
 import Footer from './components/Footer/Footer';
 import ShoppingList from './ShoppingList/ShoppingList';
+import AboutTheDevs from './components/AboutTheDevs/AboutTheDevs';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <ShoppingList />
       <UserRecipeCard />
       <Footer />
+      <AboutTheDevs />
 
     </div>
   );
