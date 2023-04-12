@@ -2,6 +2,61 @@
   box-sizing: border-box;
 }
 
+#ingredients {
+  padding: 4rem 0;
+}
+
+#whatYouNeed{
+  margin: 0;
+  padding: 20px 0;
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.ingredient-list {
+  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ingredient-list li {
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.measurement {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ccc;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.ingredient {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .measurement,
+  .ingredient {
+    font-size: 1.4rem;
+  }
+  
+  .ingredient-list li {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
 body {
   background-color: #0C0C0C;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
