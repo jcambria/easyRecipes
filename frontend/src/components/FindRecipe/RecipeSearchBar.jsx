@@ -145,7 +145,6 @@ function RecipeSearchBar() {
 
   
 
-
   return (
     
     <div className="Sub">
@@ -160,53 +159,6 @@ function RecipeSearchBar() {
       {selectedRecipe && (
        <div>
            <button onClick={() => getMealInfo()}  type="submit">Next</button>
-           {/* <section id="ingredients">
-  <h2 id='whatYouNeed'>What You'll Need</h2>
-  <ul  class="ingredient-list">
-    <li  >
-      <span class="measurement">{measurement1}</span>
-      <span class="ingredient">{ing1}</span> 
-    </li>
-    <li >
-      <span class="measurement">{measurement2}</span>
-      <span class="ingredient">{ing2}</span> 
-    </li>
-    <li  >
-      <span class="measurement">{measurement3}</span>
-      <span class="ingredient">{ing3}</span>
-    </li>
-    <li  >
-      <span class="measurement">{measurement4}</span>
-      <span class="ingredient">{ing4}</span>
-    </li>
-    <li  >
-      <span class="measurement">{measurement5}</span>
-      <span class="ingredient">{ing5}</span>
-    </li>
-    <li  >
-      <span class="measurement">{measurement6}</span>
-      <span class="ingredient">{ing6}</span>
-    </li>
-    <li  >
-      <span class="measurement">{measurement7}</span>
-      <span class="ingredient">{ing7}</span>
-    </li>
-    <li  >
-      <span class="measurement">{measurement8}</span>
-      <span class="ingredient">{ing8}</span>
-    </li>
-    <li >
-      <span class="measurement">{measurement9}</span>
-      <span class="ingredient">{ing9}</span>
-    </li>
-    <li >
-      <span class="measurement">{measurement10}</span>
-      <span class="ingredient">{ing10}</span>
-    </li>
-  </ul>
-</section>
- */}
-
 <h2 id='whatYouNeed'>
   What You'll Need
 </h2>

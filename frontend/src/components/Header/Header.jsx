@@ -9,7 +9,7 @@ import './header.css';
 
 const Header = () => {
   return (
-    <div className='app__header app__wrapper section__padding' id='home'>
+    <div className='app__header app__wrapper section__padding'>
         <div className='app__wrapper_info'>
         <div className='animation'>
   
@@ -18,7 +18,7 @@ const Header = () => {
           
           
           <img src="" alt="" /> 
-         <h1 className='app__header-h1'>  <GiSpoon className='spoon' /> For Dads  Everywhere.
+         <h1 className='app__header-h1'>  <GiSpoon className='spoon' id='home'/> For Dads  Everywhere.
          </h1>
          
          <div className='animation'>
