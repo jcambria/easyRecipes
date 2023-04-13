@@ -18,7 +18,7 @@ function App() {
       <Header />
       <RecipeSearchBar />
       <Search/>
-      {/* <RecipeCard  /> */}
+      <RecipeCard  />
       <Slider1 />
       <ShoppingList />
       <RecipesList />
