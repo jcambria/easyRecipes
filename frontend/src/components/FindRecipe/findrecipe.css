@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -42,24 +42,46 @@
 .ingredient {
   font-size: 1.4rem;
   color: #fff;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .measurement,
   .ingredient {
     font-size: 1.3rem;
 
 
-    /* align-items: center; */
-    /* text-align: center; */
+   
   }
   
   .ingredient-list li {
     margin-right: 1rem;
-    /* margin-right: 3rem;
-    margin-left: 3rem; */
-    /* text-align: center; */
+   
     margin-bottom: 0.5rem;
+  }
+} */
+
+ul {
+  color: white;
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#listItem {
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.measurement {
+  font-size: 1.2rem;
+  color: #4b515e;
+  font-weight: bolder;
+  margin-right: 0.5em;
+}
+@media only screen and (max-width: 480px) {
+  .measurement {
+    width: auto;
+    max-width: none;
+    font-size: 0.9em;
   }
 }
 

@@ -160,7 +160,7 @@ function RecipeSearchBar() {
       {selectedRecipe && (
        <div>
            <button onClick={() => getMealInfo()}  type="submit">Next</button>
-           <section id="ingredients">
+           {/* <section id="ingredients">
   <h2 id='whatYouNeed'>What You'll Need</h2>
   <ul  class="ingredient-list">
     <li  >
@@ -205,38 +205,41 @@ function RecipeSearchBar() {
     </li>
   </ul>
 </section>
+ */}
 
+<h2 id='whatYouNeed'>
+  What You'll Need
+</h2>
+<ul>
+  <li id='listItem'>
+    <span class="measurement">{measurement1}</span> {ing1} 
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement2}</span> {ing2} 
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement3}</span> {ing3}
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement4}</span> {ing4}
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement5}</span> {ing5}
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement6}</span> {ing6}
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement7}</span> {ing7}
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement8}</span> {ing8}
+  </li>
+  <li id='listItem'>
+    <span class="measurement">{measurement9}</span> {ing9}
+  </li>
+</ul>
 
-           {/* <h2 id='whatYouNeed'>
-            What Youll Need
-           </h2>
-           <li id='listItem'>
-           {measurement1}  {ing1} 
-           </li>
-           <li id='listItem' >
-            {measurement2}  {ing2} 
-           </li>
-           <li id='listItem'  >
-            {measurement3} {ing3}
-           </li>
-           <li id='listItem'  >
-            {measurement4} {ing4}
-           </li>
-           <li id='listItem'  >
-           {measurement5} {ing5}
-           </li>
-           <li id='listItem'  >
-           {measurement6} {ing6}
-           </li>
-           <li id='listItem'  >
-           {measurement7} {ing7}
-           </li>
-           <li id='listItem'  >
-           {measurement8} {ing8}
-           </li>
-           <li id='listItem'  >
-           {measurement9} {ing9}
-           </li> */}
         <div className='card'>
         <img id='foodimg' src={mealImg} alt="" />
         <div className='container'>
