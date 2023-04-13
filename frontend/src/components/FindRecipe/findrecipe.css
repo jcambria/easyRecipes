@@ -60,6 +60,16 @@
   }
 } */
 
+#whatYouNeed{
+  margin: 0;
+  padding: 20px 0;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
 ul {
   color: white;
   list-style-type: disc;
@@ -72,7 +82,7 @@ ul {
 }
 
 .measurement {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #4b515e;
   font-weight: bolder;
   margin-right: 0.5em;
