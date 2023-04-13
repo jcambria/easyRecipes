@@ -6,7 +6,7 @@ import{GiLightBulb} from 'react-icons/gi';
 function AboutTheDevs() {
 return (
 
-  <div class=" flex bg-gradient-to-r from-gray-100 to-yellow-500 sm:">
+  <div class=" flex bg-gradient-to-r from-gray-100 to-gray-500 sm:">
 
     <div class="about-devs-1 flex flex-col px-20">
         <div class="font-bold">
