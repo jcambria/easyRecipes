@@ -16,21 +16,6 @@ export default function RecipesList() {
         return () => clearInterval(periodicallyFetch)
     }, [])
 
-    function handleRecipeClick(recipe) {
-        setRecipeCard(recipe)
-        setAuthor(recipe.author)
-        setIsShowRecipeCard(!isShowRecipeCard)
-        setIsShowRecipeCard(true)
-      };
-    useEffect(() => {
-        const periodicallyFetch = setTimeout(
-           () => fetch("http://localhost:8080/api/recipes")
-                      .then(res => res.json())
-                      .then(response => setRecipes(response)),
-           1000);
-        return () => clearInterval(periodicallyFetch)
-    }, [])
-
  
     function handleRecipeClick(recipe) {
         setRecipeCard(recipe)
