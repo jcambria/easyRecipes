@@ -7,11 +7,6 @@ export default function RecipesList() {
     const [author, setAuthor] = useState("")
     const [isShowRecipeCard, setIsShowRecipeCard] =useState(false)
 
-    // useEffect(() => {
-    //     fetch("http://localhost:8080/api/recipes")
-    //                   .then(res => res.json())
-    //                   .then(response => setRecipes(response))
-    // }, [])
     useEffect(() => {
         const periodicallyFetch = setTimeout(
            () => fetch("http://localhost:8080/api/recipes")
@@ -28,7 +23,8 @@ export default function RecipesList() {
       };
 
 
-return (<>
+return (
+<>
     <div className="flex flex-col justify-center w-full h-16">
         <h1 className="text-gray-400 text-4xl font-bold text-center mb-2">Dad's Recipes</h1>
         <div className="flex w-1/4 bg-black-200 self-center mb-12 h-32">

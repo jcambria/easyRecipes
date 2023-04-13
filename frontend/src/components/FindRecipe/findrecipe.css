@@ -1,58 +1,35 @@
-* {
-  box-sizing: border-box;
-}
-
-#ingredients {
-  padding: 4rem 0;
-}
-
 #whatYouNeed{
   margin: 0;
   padding: 20px 0;
-  font-size: 30px;
+  font-size: 20px;
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
   letter-spacing: 2px;
+
 }
 
-.ingredient-list {
-  
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+ul {
+  color: white;
+  list-style-type: disc;
+  padding-left: 1em;
 }
 
-.ingredient-list li {
-  margin-right: 1.5rem;
-  margin-bottom: 1rem;
+#listItem {
+  font-weight: normal;
+  line-height: 1.5;
 }
 
 .measurement {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #ccc;
-  text-transform: uppercase;
-  margin-right: 0.5rem;
-}
-
-.ingredient {
   font-size: 1.4rem;
-  color: #fff;
+  color: #4b515e;
+  font-weight: bolder;
+  margin-right: 0.5em;
 }
-
-@media (max-width: 768px) {
-  .measurement,
-  .ingredient {
-    font-size: 1.4rem;
-  }
-  
-  .ingredient-list li {
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
+@media only screen and (max-width: 480px) {
+  .measurement {
+    width: auto;
+    max-width: none;
+    font-size: 0.9em;
   }
 }
 
@@ -64,7 +41,8 @@ body {
 }
 
 #heartbutton{
-  background-color: #040C18;
+  background-color: white;
+  color: black;
 }
 
 #icon:hover{
@@ -94,7 +72,7 @@ button:hover {
 
 .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #040C18;
+  background-color: white;
   border-radius: 20px;
   margin: 20px auto;
   padding: 30px;
