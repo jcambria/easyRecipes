@@ -1,41 +1,40 @@
-import React, { useState } from "react";
-import Axios from 'axios';
+import React from "react";
+import "./recipecard.css";
 
-function UserRecipeCard() {
-const [recipeName, setRecipeName] = useState("")
-const [recipeDescription, setRecipeDescription] = useState("")
-const [recipeIngredients, setRecipeIngredients] = useState("")
-const [recipeInstructions, setRecipeInstructions] = useState("")
-
-const getRecipe = () => {
-    Axios.get('http://localhost:8080/api/recipes').then((response) => {
-      const randomNumber = Math.floor(Math.random() * 4);
-      setRecipeName(response.data[randomNumber].name);
-      setRecipeDescription(response.data[randomNumber].description)
-      setRecipeIngredients(response.data[randomNumber].ingredients)
-      setRecipeInstructions(response.data[randomNumber].instructions)
-      console.log(response)
+function UserRecipeCard( {recipeCard, isShowRecipeCard, author}) {
 
 
-    })
-  }
+  return (
 
- return (
-
-<div>
-<button onClick={() => getRecipe()}  type="submit">Recipe</button>
-
-<h1>{recipeName}</h1>
-<h2>{recipeDescription}</h2>
-<br />
-<h3>Ingredients</h3>
-<p>{recipeIngredients}</p>
-<p>{recipeInstructions}</p>
-{/* <p>{recipe.author}</p> */}
-
-</div>
-
- );
+    <div className={`${isShowRecipeCard ? "" : "hidden"}`}>
+      <div className="flex justify-center w-full mt-20">
+        <div className="flex bg-white w-2/3 border-indigo-600 self-center h-96 overflow-y-auto rounded-md">
+          <div className="flex flex-col w-full">
+            <div className="flex justify-center border-2 border-b-red-500 py-2">
+                  <div></div>
+                  <div className="font-bold">
+                    <span>{recipeCard.name}</span>  
+                  </div>
+                  <div className="ml-4">
+                    <span>by {author.userName}</span>
+                  </div>
+            </div>
+            <div className="flex flex-col max-h-full">
+                  <div className="border-2 border-b-blue-200 px-4">
+                    <p className="m-0 "> <span className="font-bold underline decoration-1">Description:</span> {recipeCard.description}</p>
+                  </div>
+                  <div className="border-2 border-b-blue-200 px-4">
+                    <p className="m-0"><span className="font-bold underline decoration-1">Ingredients:</span> {recipeCard.ingredients}</p>
+                  </div>
+                  <div className="border-2 border-b-blue-200 px-4">
+                    <p className="m-0"><span className="font-bold underline decoration-1">Instructions:</span> {recipeCard.instructions}</p>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default UserRecipeCard;
