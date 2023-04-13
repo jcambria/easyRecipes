@@ -1,19 +1,41 @@
-import React, { useState } from 'react';
-import { AiFillAlert, AiFillAlipayCircle, AiFillBook, AiFillPauseCircle, AiOutlineExport, AiOutlineHeart, AiOutlinePlayCircle } from "react-icons/ai";
+import React, { useEffect, useState } from 'react';
+import {  AiOutlineHeart } from "react-icons/ai";
 import './findrecipe.css';
 import Axios from 'axios';
-import RecipeCard from '../RecipeCard/RecipeCard';
 
 
 function RecipeSearchBar() {
   const [query, setQuery] = useState('');
-  const [joke, setJoke] = useState("")
   const [mealInfo, setMealInfo] = useState("")
   const [mealImg, setMealImg] = useState("")
   const [mealCategory, setMealCategory] = useState("")
   const [howToVideo, setHowtoVideo] = useState("")
   const [instructions, setInstructions] = useState("")
   const [foodOrigin, setFoodOrigin] = useState("")
+  const [ing1, setIng1] = useState("")
+  const [ing2, setIng2] = useState("")
+  const [ing3, setIng3] = useState("")
+  const [ing4, setIng4] = useState("")
+  const [ing5, setIng5] = useState("")
+  const [ing6, setIng6] = useState("")
+  const [ing7, setIng7] =useState("")
+  const [ing8, setIng8] =useState("")
+  const [ing9, setIng9] =useState("")
+  const [ing10, setIng10] =useState("")
+  const [measurement1, setMeasurement1] =useState("")
+  const [measurement2, setMeasurement2] =useState("")
+  const [measurement3, setMeasurement3] =useState("")
+  const [measurement4, setMeasurement4] =useState("")
+  const [measurement5, setMeasurement5] =useState("")
+  const [measurement6, setMeasurement6] =useState("")
+  const [measurement7, setMeasurement7] =useState("")
+  const [measurement8, setMeasurement8] =useState("")
+  const [measurement9, setMeasurement9] =useState("")
+  const [measurement10, setMeasurement10] =useState("")
+
+  
+  
+
  
 
   
@@ -53,16 +75,8 @@ function RecipeSearchBar() {
   
 
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-
+  
   const [count, setCount] = useState(0);
-
-  const getJoke = () => {
-
-    Axios.get("https://official-joke-api.appspot.com/random_joke").then((response) => {
-      setJoke(response.data.setup + " . . . " + response.data.punchline)
-    })
-  }
-
 
 
   const getMealInfo = () => {
@@ -75,15 +89,34 @@ function RecipeSearchBar() {
       setHowtoVideo(response.data.meals[0].strYoutube)
       setInstructions(response.data.meals[0].strInstructions)
       setFoodOrigin(response.data.meals[0].strArea)
-
+      setIng1(response.data.meals[0].strIngredient1)
+      setIng2(response.data.meals[0].strIngredient2)
+      setIng3(response.data.meals[0].strIngredient3)
+      setIng4(response.data.meals[0].strIngredient4)
+      setIng5(response.data.meals[0].strIngredient5)
+      setIng6(response.data.meals[0].strIngredient6)
+      setIng7(response.data.meals[0].strIngredient7)
+      setIng8(response.data.meals[0].strIngredient8)
+      setIng9(response.data.meals[0].strIngredient9)
+      setIng10(response.data.meals[0].strIngredient10)
+      
+      setMeasurement1(response.data.meals[0].strMeasure1)
+      setMeasurement2(response.data.meals[0].strMeasure2)
+      setMeasurement3(response.data.meals[0].strMeasure3)
+      setMeasurement4(response.data.meals[0].strMeasure4)
+      setMeasurement5(response.data.meals[0].strMeasure5)
+      setMeasurement6(response.data.meals[0].strMeasure6)
+      setMeasurement7(response.data.meals[0].strMeasure7)
+      setMeasurement8(response.data.meals[0].strMeasure8)
+      setMeasurement9(response.data.meals[0].strMeasure9)
+      setMeasurement10(response.data.meals[0].strMeasure10)
+      
+      
 
     })
   }
 
-
-
-
-
+    
 
   function handleCount(){
     setCount(count + 1);
@@ -101,6 +134,7 @@ function RecipeSearchBar() {
     if (matchingRecipes) {
       setSelectedRecipe(matchingRecipes[0]);
     } else {
+
       setSelectedRecipe(null);
     }
   };
@@ -112,30 +146,103 @@ function RecipeSearchBar() {
       <div id='recipes'>
         
       <form  onSubmit={handleSubmit}>
-        {/* <input type="text" placeholder="find a recipe..." value={query} onChange={handleChange} /> */}
+        
         <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
       </form>
       </div>
       {selectedRecipe && (
        <div>
-          {/* <AiFillBook id='play' onClick={() => getMealInfo()} /> */}
            <button onClick={() => getMealInfo()}  type="submit">Next</button>
+           <section id="ingredients">
+  <h2 id='whatYouNeed'>What You'll Need</h2>
+  <ul  class="ingredient-list">
+    <li  >
+      <span class="measurement">{measurement1}</span>
+      <span class="ingredient">{ing1}</span> 
+    </li>
+    <li >
+      <span class="measurement">{measurement2}</span>
+      <span class="ingredient">{ing2}</span> 
+    </li>
+    <li  >
+      <span class="measurement">{measurement3}</span>
+      <span class="ingredient">{ing3}</span>
+    </li>
+    <li  >
+      <span class="measurement">{measurement4}</span>
+      <span class="ingredient">{ing4}</span>
+    </li>
+    <li  >
+      <span class="measurement">{measurement5}</span>
+      <span class="ingredient">{ing5}</span>
+    </li>
+    <li  >
+      <span class="measurement">{measurement6}</span>
+      <span class="ingredient">{ing6}</span>
+    </li>
+    <li  >
+      <span class="measurement">{measurement7}</span>
+      <span class="ingredient">{ing7}</span>
+    </li>
+    <li  >
+      <span class="measurement">{measurement8}</span>
+      <span class="ingredient">{ing8}</span>
+    </li>
+    <li >
+      <span class="measurement">{measurement9}</span>
+      <span class="ingredient">{ing9}</span>
+    </li>
+    <li >
+      <span class="measurement">{measurement10}</span>
+      <span class="ingredient">{ing10}</span>
+    </li>
+  </ul>
+</section>
+
+
+           {/* <h2 id='whatYouNeed'>
+            What Youll Need
+           </h2>
+           <li id='listItem'>
+           {measurement1}  {ing1} 
+           </li>
+           <li id='listItem' >
+            {measurement2}  {ing2} 
+           </li>
+           <li id='listItem'  >
+            {measurement3} {ing3}
+           </li>
+           <li id='listItem'  >
+            {measurement4} {ing4}
+           </li>
+           <li id='listItem'  >
+           {measurement5} {ing5}
+           </li>
+           <li id='listItem'  >
+           {measurement6} {ing6}
+           </li>
+           <li id='listItem'  >
+           {measurement7} {ing7}
+           </li>
+           <li id='listItem'  >
+           {measurement8} {ing8}
+           </li>
+           <li id='listItem'  >
+           {measurement9} {ing9}
+           </li> */}
         <div className='card'>
         <img id='foodimg' src={mealImg} alt="" />
         <div className='container'>
         <h1 id='foodtitle'>{mealInfo}</h1>
         <p id='foodInfoCat'>Category: {mealCategory} <br />  Origin: {foodOrigin} </p>
         <p id='foodinfoIns'>Instructions: {instructions}</p>
-        {/* <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   */}
+        <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
         {/* <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p> */}
-        
-  
         </div>
-        {/* <AiOutlineHeart id='newLike' onClick={handleCount}  /> */}
         
-          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart /></button> </p>
+          <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart id='icon' /></button> </p>
         </div>
-        {/* <RecipeCard /> */}
+        
         </div>
         
       )}
