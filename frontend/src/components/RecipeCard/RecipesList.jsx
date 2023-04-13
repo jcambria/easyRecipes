@@ -7,18 +7,24 @@ export default function RecipesList() {
     const [author, setAuthor] = useState("")
     const [isShowRecipeCard, setIsShowRecipeCard] =useState(false)
 
+    // useEffect(() => {
+    //     fetch("http://localhost:8080/api/recipes")
+    //                   .then(res => res.json())
+    //                   .then(response => setRecipes(response))
+    // }, [])
     useEffect(() => {
-        const periodicallyFetch = setInterval(
+        const periodicallyFetch = setTimeout(
            () => fetch("http://localhost:8080/api/recipes")
                       .then(res => res.json())
                       .then(response => setRecipes(response)),
            1000);
         return () => clearInterval(periodicallyFetch)
     }, [])
+
     function handleRecipeClick(recipe) {
         setRecipeCard(recipe)
         setAuthor(recipe.author)
-        setIsShowRecipeCard(!isShowRecipeCard)
+        setIsShowRecipeCard(true)
       };
 
 
