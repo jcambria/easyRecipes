@@ -16,7 +16,6 @@ export default function RecipesList() {
         return () => clearInterval(periodicallyFetch)
     }, [])
 
- 
     function handleRecipeClick(recipe) {
         setRecipeCard(recipe)
         setAuthor(recipe.author)
