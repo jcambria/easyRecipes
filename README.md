@@ -1,4 +1,22 @@
 # MealsByDad
+**Front End**
+| Tool/Library | Description |
+| --- | --- |
+| React | A JavaScript library for building user interfaces |
+| Vue | A progressive framework for building user interfaces |
+| Angular | A platform for building mobile and desktop web applications |
+| Bootstrap | A CSS framework for building responsive websites |
+| Tailwind CSS | A utility-first CSS framework for rapidly building custom designs |
+
+**Back End**
+| Tool/Library | Description |
+| --- | --- |
+| Node.js | A JavaScript runtime built on Chrome's V8 JavaScript engine |
+| Django | A high-level Python web framework |
+| Flask | A micro web framework written in Python |
+| Express.js | A fast, unopinionated, minimalist web framework for Node.js |
+| Ruby on Rails | A server-side web application framework written in Ruby |
+
 
 
 ## Creating a new database for the Project
