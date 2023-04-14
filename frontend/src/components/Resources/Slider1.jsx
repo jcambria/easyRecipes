@@ -17,9 +17,7 @@ const Card = () => {
 
   return (
     <div className='space__'>
-      <div>
-
-        
+      <div id='tool'>
 
       <AiFillTool  id="tool"/>
       <div id='resources'>

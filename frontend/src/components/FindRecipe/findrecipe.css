@@ -5,13 +5,14 @@
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
+  padding-left: 2em
 
 }
 
 ul {
   color: white;
   list-style-type: disc;
-  padding-left: 1.6em;
+  padding-left: 3.8em;
 }
 
 #listItem {
