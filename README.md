@@ -3,19 +3,21 @@
 | Tool/Library | Description |
 | --- | --- |
 | React | A JavaScript library for building user interfaces |
-| Vue | A progressive framework for building user interfaces |
-| Angular | A platform for building mobile and desktop web applications |
-| Bootstrap | A CSS framework for building responsive websites |
+| HTML | The standard markup language for creating web pages |
+| JavaScript | A high-level programming language for creating dynamic web content |
 | Tailwind CSS | A utility-first CSS framework for rapidly building custom designs |
+| CSS | A stylesheet language used for describing the presentation of a document |
 
 **Back End**
 | Tool/Library | Description |
 | --- | --- |
-| Node.js | A JavaScript runtime built on Chrome's V8 JavaScript engine |
-| Django | A high-level Python web framework |
-| Flask | A micro web framework written in Python |
-| Express.js | A fast, unopinionated, minimalist web framework for Node.js |
-| Ruby on Rails | A server-side web application framework written in Ruby |
+| Java | A general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible |
+| Spring MVC | A powerful and flexible Java-based web framework that is used to build modern web applications |
+| Spring JPA | A powerful and flexible Java-based ORM (Object-Relational Mapping) library that simplifies data access for database-driven applications |
+| Hibernate | An ORM (Object-Relational Mapping) tool for Java that provides a framework for mapping an object-oriented domain model to a relational database |
+
+
+
 
 
 
