@@ -7,7 +7,7 @@ import{RiKnifeLine} from 'react-icons/ri';
 function AboutTheDevs() {
 return (
 
-  <div class=" flex bg-cover bg-gradient-to-r from-gray-100 to-gray-500 sm:">
+  <div class=" flex bg-cover bg-gradient-to-r from-gray-100 to-gray-500 image-grid-container">
     <div class="flex font-bold text-5xl pl-4 pb-10" ><br/>
     The Guys Behind<br/>  The Knives
     </div>
