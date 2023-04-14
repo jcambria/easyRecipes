@@ -13,7 +13,7 @@ function Footer() {
           <br />
           <a  href="tel:555-123-4567" className="link"> <GiPhone /> 555-123-4567</a>
           <br />
-          <a href="mailto:jrcambria92@gmail.com" className="link"> <GiMailbox />mealsByDad.info@gmail.com</a>
+          <a href="mailto:jrcambria92@gmail.com" className="link"> <GiMailbox />info-MBD@gmail.com</a>
         </h3>
         </div>
         <p> Your suggestions, <br /> are the key to creating a better experience for everyone.</p>
