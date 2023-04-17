@@ -7,7 +7,7 @@
   .space__{
     justify-content: center;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 150px;
     padding-left: 30px;
     padding-right: 10px;
 
@@ -35,7 +35,7 @@
   #tool{
     display: flex;
     justify-content: center;
-    margin-bottom: 330px;
+    margin-bottom: 30px;
     color: #bf9b30;
     font-size: 150px;
   }
