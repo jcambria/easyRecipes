@@ -158,11 +158,11 @@ function RecipeSearchBar() {
         </form>
       </div>
       {selectedRecipe && (
-       <div className='flex'>
-       <div className='flex flex-col w-1/2'>
+       <div className='flex flex-wrap p-4'>
+       <div className='flex flex-col w-full md:w-1/2'>
             <div className=''>
             <h2 id='whatYouNeed'>
-                What You'll Need
+                What You'll Need for {mealInfo}
               </h2>
               <ul>
                 <li id='listItem'>

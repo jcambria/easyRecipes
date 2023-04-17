@@ -75,7 +75,7 @@ let handleSubmit = async (e) => {
 
     return (
       <div className={`${isShowRegister ? "active" : ""} show`} >
-        <div className="login-form" >
+        <div className="login-form " >
             <div className="form-box solid">
                 <form onSubmit={handleSubmit}>
                     <h1 className="login-text">Register</h1>

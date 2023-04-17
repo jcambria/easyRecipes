@@ -6,7 +6,7 @@ function RegisterButton({ handleRegisterClick }) {
   };
   return (
     
-      
+    
       <span onClick={handleClick} className="loginicon">
           Register
         </span>
