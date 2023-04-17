@@ -44,7 +44,7 @@ const Navbar = () => {
             <a href="#recipes">Find Recipes</a>
           </li>
           <li className="p__opensans">
-            <a href="#resources">Resources</a>
+            <a href="#tool">Resources</a>
           </li>
           <li className="p__opensans">
             <a href="#contact">Contact</a>

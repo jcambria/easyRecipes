@@ -29,7 +29,8 @@ const ShoppingList = () => {
   };
 
   return (
-    <div className="shopping-list">
+    <div className='flex justify-center'>
+    <div className="shopping-list flex flex-col justify-center w-1/2">
       <h1 className="title">Shopping List</h1>
       <form onSubmit={handleAddItem}>
         <input type="text" name="item" className="input" placeholder="Add an item" />
@@ -44,6 +45,8 @@ const ShoppingList = () => {
         ))}
       </ul>
     </div>
+    </div>
+
   );
 };
 

@@ -19,8 +19,8 @@ function App() {
       <Header />
       <RecipeSearchBar />
       <Search/>
-      <Slider1 />
       <ShoppingList />
+      <Slider1 />
       <RecipesList />
       <Footer />
       <AboutTheDevs />
