@@ -16,24 +16,16 @@ const Card = () => {
   };
 
   return (
-    <div className='space__'>
+    <div className='space__' id="tools">
       <div id='tool'>
-
-      <AiFillTool  id="tool"/>
-      <div id='resources'>
-
-      </div>
-    
-      </div>
-      <div id='resources'>
-
+        <AiFillTool />
       </div>
     
       <h1 id='reheader'>Some Helpful Tools</h1>
 
     <div   className="image-grid-container">
       <div className="image-grid">
-        <a href="https://www.timeanddate.com/timer/">
+        <a target="_blank" rel="noreferrer" href="https://www.timeanddate.com/timer/">
           <div
             className={`image-container ${hoveredIndex === 0 ? 'hovered' : ''}`}
             onMouseEnter={() => handleMouseEnter(0)}
@@ -47,7 +39,7 @@ const Card = () => {
         </a>
         
 
-        <a href="https://www.tasteofhome.com/article/cooking-measurement-conversion/">
+        <a target="_blank" rel="noreferrer" href="https://www.tasteofhome.com/article/cooking-measurement-conversion/">
           <div
             className={`image-container ${hoveredIndex === 1 ? 'hovered' : ''}`}
             onMouseEnter={() => handleMouseEnter(1)}
@@ -60,7 +52,7 @@ const Card = () => {
           </div>
         </a>
 
-        <a href="https://learntocook.com/techniques/top-6-kitchen-best-practices/">
+        <a target="_blank" rel="noreferrer" href="https://learntocook.com/techniques/top-6-kitchen-best-practices/">
           <div
             className={`image-container ${hoveredIndex === 2 ? 'hovered' : ''}`}
             onMouseEnter={() => handleMouseEnter(2)}
@@ -73,7 +65,7 @@ const Card = () => {
           </div>
         </a>
 
-        <a href="https://www.cooksmarts.com/cooking-guides/create-a-functional-kitchen/20-must-have-kitchen-tools/">
+        <a  target="_blank" rel="noreferrer" href="https://www.cooksmarts.com/cooking-guides/create-a-functional-kitchen/20-must-have-kitchen-tools/">
           <div
             className={`image-container ${hoveredIndex === 3 ? 'hovered' : ''}`}
             onMouseEnter={() => handleMouseEnter(3)}

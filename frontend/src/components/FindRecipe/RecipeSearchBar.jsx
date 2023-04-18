@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {  AiOutlineHeart } from "react-icons/ai";
 import './findrecipe.css';
 import Axios from 'axios';
+import ShoppingList from '../../ShoppingList/ShoppingList';
 
 
 function RecipeSearchBar() {
@@ -147,50 +148,53 @@ function RecipeSearchBar() {
 
   return (
     
-    <div className="Sub">
+    <div className="Sub flex flex-col">
+    <div className='w-1/2'>
+    </div>
       
-      <div id='recipes'>
-        
-      <form  onSubmit={handleSubmit}>
-        
-        <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
-      </form>
+      <div className='flex place-content-center' id='recipes'>        
+        <form  onSubmit={handleSubmit}>
+          <button onClick={() => getMealInfo()} id='recipesButton'  type="submit">Click For Random Recipe</button>
+        </form>
       </div>
       {selectedRecipe && (
-       <div>
-           <button onClick={() => getMealInfo()}  type="submit">Next</button>
-<h2 id='whatYouNeed'>
-  What You'll Need
-</h2>
-<ul>
-  <li id='listItem'>
-    <span class="measurement">{measurement1}</span> {ing1} 
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement2}</span> {ing2} 
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement3}</span> {ing3}
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement4}</span> {ing4}
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement5}</span> {ing5}
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement6}</span> {ing6}
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement7}</span> {ing7}
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement8}</span> {ing8}
-  </li>
-  <li id='listItem'>
-    <span class="measurement">{measurement9}</span> {ing9}
-  </li>
-</ul>
+       <div className='flex flex-wrap p-4'>
+       <div className='flex flex-col w-full md:w-1/2'>
+            <div className=''>
+            <h2 id='whatYouNeed'>
+                What You'll Need for {mealInfo}
+              </h2>
+              <ul>
+                <li id='listItem'>
+                  <span class="measurement">{measurement1}</span> {ing1} 
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement2}</span> {ing2} 
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement3}</span> {ing3}
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement4}</span> {ing4}
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement5}</span> {ing5}
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement6}</span> {ing6}
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement7}</span> {ing7}
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement8}</span> {ing8}
+                </li>
+                <li id='listItem'>
+                  <span class="measurement">{measurement9}</span> {ing9}
+                </li>
+              </ul>
+           </div>
+</div>
 
         <div className='card'>
         <img id='foodimg' src={mealImg} alt="" />

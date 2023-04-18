@@ -21,6 +21,8 @@
 
 
 
+
+
 ## Creating a new database for the Project
 * `mysql -u root -e "drop database chefboyarjava"`
 * `mysql -u root -e "create database chefboyarjava"`

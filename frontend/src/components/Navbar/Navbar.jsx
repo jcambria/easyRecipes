@@ -29,7 +29,7 @@ const Navbar = () => {
     setIsShowRecipeForm((isShowRecipeForm) => !isShowRecipeForm);
   };
   return (
-    <div>
+    <div className="h-48" id="top">
       <nav className="app_navbar">
         <div className="app__navbar-logo">
           {/* <img src={require('./MBD.png')} alt="" /> */}
@@ -38,13 +38,13 @@ const Navbar = () => {
         </div>
         <ul className="app__navbar-links">
           <li className="p__opensans">
-            <a href="#home">Home</a>
+            <a href="#top">Home</a>
           </li>
           <li className="p__opensans">
             <a href="#recipes">Find Recipes</a>
           </li>
           <li className="p__opensans">
-            <a href="#resources">Resources</a>
+            <a href="#tools">Resources</a>
           </li>
           <li className="p__opensans">
             <a href="#contact">Contact</a>

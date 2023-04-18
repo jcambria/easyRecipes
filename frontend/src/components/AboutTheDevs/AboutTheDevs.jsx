@@ -93,7 +93,7 @@ return (
           </a>
         </div>
         <div class="flex hover:bg-gradient-to-r from gray-200 to-yellow-500">
-        <a href="https://egalayub.github.io/Professional-Portfolio/"target="_blank"rel="noreferrer">
+        <a href="http://justincambria.com/"target="_blank"rel="noreferrer">
             <GiLightBulb size={60} />Portfolio
           </a>
         </div>
